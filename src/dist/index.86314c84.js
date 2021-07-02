@@ -21880,7 +21880,7 @@ class MainView extends _reactDefault.default.Component {
             movies: [],
             selectedMovie: null,
             user: null,
-            registered: true
+            register: true
         };
     }
     componentDidMount() {
@@ -21904,12 +21904,12 @@ class MainView extends _reactDefault.default.Component {
     }
     onRegister(register) {
         this.setState({
-            register
+            register: register
         });
     }
     render() {
-        const { movies , selectedMovie , user  } = this.state;
-        if (!user) return(/*#__PURE__*/ _reactDefault.default.createElement(_loginView.LoginView, {
+        const { movies , selectedMovie , user , register  } = this.state;
+        if (!user && register) return(/*#__PURE__*/ _reactDefault.default.createElement(_loginView.LoginView, {
             onLoggedIn: (user1)=>this.onLoggedIn(user1)
             ,
             __source: {
@@ -21918,8 +21918,8 @@ class MainView extends _reactDefault.default.Component {
             },
             __self: this
         }));
-        if (!user) return(/*#__PURE__*/ _reactDefault.default.createElement(_registrationView.RegistrationView, {
-            onRegister: (register)=>this.onRegister(register)
+        if (!user && !register) return(/*#__PURE__*/ _reactDefault.default.createElement(_registrationView.RegistrationView, {
+            onRegister: (register1)=>this.onRegister(register1)
             ,
             __source: {
                 fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/main-view/main-view.jsx",
