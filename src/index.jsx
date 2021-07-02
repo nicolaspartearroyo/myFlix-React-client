@@ -8,10 +8,24 @@ import './index.scss';
 
 // Main component (will eventually use all the others)
 class myFlixApplication extends React.Component {
+
+  constructor() {
+    super();
+  }
+
   render() {
     return (
       <MainView />
     );
+  }
+
+  componentDidMount() {
+  }
+
+  componentDidUpdate() {
+  }
+
+  componentWillUnmount() {
   }
 }
 
