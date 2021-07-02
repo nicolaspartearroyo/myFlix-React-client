@@ -24482,20 +24482,16 @@ function RegistrationView(props) {
         e.preventDefault();
         console.log(name, username, password, email, birthdate);
     };
-    const handleRegistration = ()=>{
-        let reg = false;
-        props.registration(reg);
-    };
     return(/*#__PURE__*/ _reactDefault.default.createElement("form", {
         __source: {
             fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 22
+            lineNumber: 18
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement("label", {
         __source: {
             fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 23
+            lineNumber: 19
         },
         __self: this
     }, "Name:", /*#__PURE__*/ _reactDefault.default.createElement("input", {
@@ -24505,13 +24501,13 @@ function RegistrationView(props) {
         ,
         __source: {
             fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 25
+            lineNumber: 21
         },
         __self: this
     })), /*#__PURE__*/ _reactDefault.default.createElement("label", {
         __source: {
             fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 31
+            lineNumber: 27
         },
         __self: this
     }, "Username:", /*#__PURE__*/ _reactDefault.default.createElement("input", {
@@ -24521,13 +24517,13 @@ function RegistrationView(props) {
         ,
         __source: {
             fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 33
+            lineNumber: 29
         },
         __self: this
     })), /*#__PURE__*/ _reactDefault.default.createElement("label", {
         __source: {
             fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 39
+            lineNumber: 35
         },
         __self: this
     }, "Create Password:", /*#__PURE__*/ _reactDefault.default.createElement("input", {
@@ -24537,13 +24533,13 @@ function RegistrationView(props) {
         ,
         __source: {
             fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 41
+            lineNumber: 37
         },
         __self: this
     }), /*#__PURE__*/ _reactDefault.default.createElement("label", {
         __source: {
             fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 46
+            lineNumber: 42
         },
         __self: this
     }, "Email:", /*#__PURE__*/ _reactDefault.default.createElement("input", {
@@ -24553,13 +24549,13 @@ function RegistrationView(props) {
         ,
         __source: {
             fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 48
+            lineNumber: 44
         },
         __self: this
     })), /*#__PURE__*/ _reactDefault.default.createElement("label", {
         __source: {
             fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 54
+            lineNumber: 50
         },
         __self: this
     }, "Birthdate:", /*#__PURE__*/ _reactDefault.default.createElement("input", {
@@ -24569,7 +24565,7 @@ function RegistrationView(props) {
         ,
         __source: {
             fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 56
+            lineNumber: 52
         },
         __self: this
     }))), /*#__PURE__*/ _reactDefault.default.createElement("button", {
@@ -24577,7 +24573,7 @@ function RegistrationView(props) {
         onClick: handleSubmit,
         __source: {
             fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 63
+            lineNumber: 59
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement("button", {
@@ -24586,7 +24582,7 @@ function RegistrationView(props) {
         },
         __source: {
             fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 64
+            lineNumber: 60
         },
         __self: this
     }, "Back"), "Submit")));

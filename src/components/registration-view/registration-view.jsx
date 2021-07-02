@@ -13,10 +13,6 @@ export function RegistrationView(props) {
     console.log(name, username, password, email, birthdate);
   };
 
-  const handleRegistration = () => {
-    let reg = false
-    props.registration(reg);
-  }
 
   return (
     <form>
