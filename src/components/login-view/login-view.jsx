@@ -12,11 +12,6 @@ export function LoginView(props) {
     props.onLoggedIn(username);
   };
 
-  const handleRegistration = () => {
-    let reg = false
-    props.registration(reg);
-  }
-
   return (
     <form>
       <label>
