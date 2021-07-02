@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from 'prop-types';
 
-import { RegistrationView } from '../registration-view/registration-view';
-
 
 export function RegistrationView(props) {
   const [username, setUsername] = useState("");
@@ -14,6 +12,11 @@ export function RegistrationView(props) {
     e.preventDefault();
     console.log(name, username, password, email, birthdate);
   };
+
+  const handleRegistration = () => {
+    let reg = false
+    props.registration(reg);
+  }
 
   return (
     <form>

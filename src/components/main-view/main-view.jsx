@@ -50,16 +50,11 @@ export class MainView extends React.Component {
     });
   }
 
-  toggleRegister = (e) => {
-    e.preventDefault();
-    this.setState({
-      register: !this.state.register
-    })
-  }
-
   render() {
     const { movies, selectedMovie, user } = this.state;
     if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
+
+    if (!user) return <RegistrationView onRegister={register => this.onRegister(register)} />;
 
     if (movies.length === 0) return <div className="main-view" />;
 
