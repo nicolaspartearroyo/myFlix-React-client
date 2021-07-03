@@ -21914,7 +21914,7 @@ class MainView extends _reactDefault.default.Component {
             ,
             __source: {
                 fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/main-view/main-view.jsx",
-                lineNumber: 55
+                lineNumber: 52
             },
             __self: this
         }));
@@ -21923,7 +21923,7 @@ class MainView extends _reactDefault.default.Component {
             ,
             __source: {
                 fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/main-view/main-view.jsx",
-                lineNumber: 57
+                lineNumber: 54
             },
             __self: this
         }));
@@ -21931,7 +21931,7 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view",
             __source: {
                 fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/main-view/main-view.jsx",
-                lineNumber: 59
+                lineNumber: 56
             },
             __self: this
         }));
@@ -21939,7 +21939,7 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view",
             __source: {
                 fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/main-view/main-view.jsx",
-                lineNumber: 62
+                lineNumber: 59
             },
             __self: this
         }, selectedMovie ? /*#__PURE__*/ _reactDefault.default.createElement(_movieView.MovieView, {
@@ -21949,7 +21949,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/main-view/main-view.jsx",
-                lineNumber: 64
+                lineNumber: 61
             },
             __self: this
         }) : movies.map((movie)=>/*#__PURE__*/ _reactDefault.default.createElement(_movieCard.MovieCard, {
@@ -21960,7 +21960,7 @@ class MainView extends _reactDefault.default.Component {
                 },
                 __source: {
                     fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/main-view/main-view.jsx",
-                    lineNumber: 66
+                    lineNumber: 63
                 },
                 __self: this
             })
@@ -24564,24 +24564,7 @@ function RegistrationView(props) {
             lineNumber: 52
         },
         __self: this
-    }))), /*#__PURE__*/ _reactDefault.default.createElement("button", {
-        type: "submit",
-        onClick: handleSubmit,
-        __source: {
-            fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 59
-        },
-        __self: this
-    }, /*#__PURE__*/ _reactDefault.default.createElement("button", {
-        onClick: ()=>{
-            handleSubmit(null);
-        },
-        __source: {
-            fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 60
-        },
-        __self: this
-    }, "Back"), "Submit")));
+    })))));
 }
 _s(RegistrationView, "RIZRq4jE1cgzcLOHGIpSeTDhd80=");
 _c = RegistrationView;

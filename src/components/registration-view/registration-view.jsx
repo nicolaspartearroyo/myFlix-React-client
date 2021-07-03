@@ -56,10 +56,10 @@ export function RegistrationView(props) {
           />
         </label>
       </label>
-      <button type="submit" onClick={handleSubmit}>
+      {/* <button type="submit" onClick={handleSubmit}>
         <button onClick={() => { handleSubmit(null); }}>Back</button>
         Submit
-      </button>
+      </button> */}
     </form>
   );
 }
