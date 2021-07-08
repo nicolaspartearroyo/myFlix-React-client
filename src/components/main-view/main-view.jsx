@@ -9,6 +9,8 @@ import { MovieCard } from '../movie-card/movie-card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
+
+
 export class MainView extends React.Component {
   constructor() {
     super();
