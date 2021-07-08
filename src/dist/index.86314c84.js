@@ -21872,6 +21872,10 @@ var _loginView = require("../login-view/login-view");
 var _registrationView = require("../registration-view/registration-view");
 var _movieView = require("../movie-view/movie-view");
 var _movieCard = require("../movie-card/movie-card");
+var _col = require("react-bootstrap/Col");
+var _colDefault = parcelHelpers.interopDefault(_col);
+var _row = require("react-bootstrap/Row");
+var _rowDefault = parcelHelpers.interopDefault(_row);
 class MainView extends _reactDefault.default.Component {
     constructor(){
         super();
@@ -21913,7 +21917,7 @@ class MainView extends _reactDefault.default.Component {
             ,
             __source: {
                 fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/main-view/main-view.jsx",
-                lineNumber: 53
+                lineNumber: 56
             },
             __self: this
         }));
@@ -21922,7 +21926,7 @@ class MainView extends _reactDefault.default.Component {
             ,
             __source: {
                 fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/main-view/main-view.jsx",
-                lineNumber: 55
+                lineNumber: 58
             },
             __self: this
         }));
@@ -21930,22 +21934,22 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view",
             __source: {
                 fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/main-view/main-view.jsx",
-                lineNumber: 57
-            },
-            __self: this
-        }));
-        return(/*#__PURE__*/ _reactDefault.default.createElement(Row, {
-            className: "main-view justify-content-md-center",
-            __source: {
-                fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/main-view/main-view.jsx",
                 lineNumber: 60
             },
             __self: this
-        }, selectedMovie ? /*#__PURE__*/ _reactDefault.default.createElement(Col, {
-            md: 8,
+        }));
+        return(/*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
+            className: "main-view justify-content-md-center",
             __source: {
                 fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/main-view/main-view.jsx",
                 lineNumber: 63
+            },
+            __self: this
+        }, selectedMovie ? /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
+            md: 8,
+            __source: {
+                fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/main-view/main-view.jsx",
+                lineNumber: 66
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_movieView.MovieView, {
@@ -21955,14 +21959,14 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/main-view/main-view.jsx",
-                lineNumber: 64
+                lineNumber: 67
             },
             __self: this
-        })) : movies.map((movie)=>/*#__PURE__*/ _reactDefault.default.createElement(Col, {
+        })) : movies.map((movie)=>/*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
                 md: 3,
                 __source: {
                     fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/main-view/main-view.jsx",
-                    lineNumber: 68
+                    lineNumber: 71
                 },
                 __self: this
             }, /*#__PURE__*/ _reactDefault.default.createElement(_movieCard.MovieCard, {
@@ -21973,7 +21977,7 @@ class MainView extends _reactDefault.default.Component {
                 },
                 __source: {
                     fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/main-view/main-view.jsx",
-                    lineNumber: 69
+                    lineNumber: 72
                 },
                 __self: this
             }))
@@ -21987,7 +21991,7 @@ exports.default = MainView;
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"3b2NM","../movie-view/movie-view":"2Ia6h","../movie-card/movie-card":"iiGD0","@parcel/transformer-js/src/esmodule-helpers.js":"7IoRK","../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"3QRYi","axios":"7rA65","../login-view/login-view":"6ZzB0","../registration-view/registration-view":"62Lx3"}],"2Ia6h":[function(require,module,exports) {
+},{"react":"3b2NM","../movie-view/movie-view":"2Ia6h","../movie-card/movie-card":"iiGD0","@parcel/transformer-js/src/esmodule-helpers.js":"7IoRK","../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"3QRYi","axios":"7rA65","../login-view/login-view":"6ZzB0","../registration-view/registration-view":"62Lx3","react-bootstrap/Col":"2D0r8","react-bootstrap/Row":"3fzwD"}],"2Ia6h":[function(require,module,exports) {
 var helpers = require("../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -26243,7 +26247,63 @@ $RefreshReg$(_c, "RegistrationView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"3b2NM","prop-types":"4dfy5","@parcel/transformer-js/src/esmodule-helpers.js":"7IoRK","../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"3QRYi"}],"5zsSU":[function() {},{}],"3Mt3t":[function(require,module,exports) {
+},{"react":"3b2NM","prop-types":"4dfy5","@parcel/transformer-js/src/esmodule-helpers.js":"7IoRK","../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"3QRYi"}],"3fzwD":[function(require,module,exports) {
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+exports.__esModule = true;
+exports.default = void 0;
+var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
+var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
+var _classnames = _interopRequireDefault(require("classnames"));
+var _react = _interopRequireDefault(require("react"));
+var _ThemeProvider = require("./ThemeProvider");
+var _excluded = [
+    "bsPrefix",
+    "className",
+    "noGutters",
+    "as"
+];
+var DEVICE_SIZES = [
+    'xl',
+    'lg',
+    'md',
+    'sm',
+    'xs'
+];
+var defaultProps = {
+    noGutters: false
+};
+var Row = /*#__PURE__*/ _react.default.forwardRef(function(_ref, ref) {
+    var bsPrefix = _ref.bsPrefix, className = _ref.className, noGutters = _ref.noGutters, _ref$as = _ref.as, Component = _ref$as === void 0 ? 'div' : _ref$as, props = _objectWithoutPropertiesLoose2.default(_ref, _excluded);
+    var decoratedBsPrefix = _ThemeProvider.useBootstrapPrefix(bsPrefix, 'row');
+    var sizePrefix = decoratedBsPrefix + "-cols";
+    var classes = [];
+    DEVICE_SIZES.forEach(function(brkPoint) {
+        var propValue = props[brkPoint];
+        delete props[brkPoint];
+        var cols;
+        if (propValue != null && typeof propValue === 'object') cols = propValue.cols;
+        else cols = propValue;
+        var infix = brkPoint !== 'xs' ? "-" + brkPoint : '';
+        if (cols != null) classes.push("" + sizePrefix + infix + "-" + cols);
+    });
+    return(/*#__PURE__*/ _react.default.createElement(Component, _extends2.default({
+        ref: ref
+    }, props, {
+        className: _classnames.default.apply(void 0, [
+            className,
+            decoratedBsPrefix,
+            noGutters && 'no-gutters'
+        ].concat(classes))
+    })));
+});
+Row.displayName = 'Row';
+Row.defaultProps = defaultProps;
+var _default = Row;
+exports.default = _default;
+module.exports = exports["default"];
+
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","react":"3b2NM","./ThemeProvider":"4rz1S"}],"5zsSU":[function() {},{}],"3Mt3t":[function(require,module,exports) {
 "use strict";
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 exports.__esModule = true;
