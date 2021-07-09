@@ -21872,6 +21872,7 @@ var _loginView = require("../login-view/login-view");
 var _registrationView = require("../registration-view/registration-view");
 var _movieView = require("../movie-view/movie-view");
 var _movieCard = require("../movie-card/movie-card");
+var _directorView = require("../director-view/director-view");
 var _col = require("react-bootstrap/Col");
 var _colDefault = parcelHelpers.interopDefault(_col);
 var _row = require("react-bootstrap/Row");
@@ -21919,7 +21920,7 @@ class MainView extends _reactDefault.default.Component {
             ,
             __source: {
                 fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/main-view/main-view.jsx",
-                lineNumber: 60
+                lineNumber: 61
             },
             __self: this
         }));
@@ -21928,7 +21929,7 @@ class MainView extends _reactDefault.default.Component {
             ,
             __source: {
                 fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/main-view/main-view.jsx",
-                lineNumber: 62
+                lineNumber: 63
             },
             __self: this
         }));
@@ -21936,7 +21937,7 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view",
             __source: {
                 fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/main-view/main-view.jsx",
-                lineNumber: 64
+                lineNumber: 65
             },
             __self: this
         }));
@@ -21944,14 +21945,14 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view justify-content-md-center",
             __source: {
                 fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/main-view/main-view.jsx",
-                lineNumber: 67
+                lineNumber: 70
             },
             __self: this
         }, selectedMovie ? /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
             md: 8,
             __source: {
                 fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/main-view/main-view.jsx",
-                lineNumber: 70
+                lineNumber: 74
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_movieView.MovieView, {
@@ -21961,14 +21962,14 @@ class MainView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/main-view/main-view.jsx",
-                lineNumber: 71
+                lineNumber: 75
             },
             __self: this
         })) : movies.map((movie)=>/*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
                 md: 3,
                 __source: {
                     fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/main-view/main-view.jsx",
-                    lineNumber: 75
+                    lineNumber: 79
                 },
                 __self: this
             }, /*#__PURE__*/ _reactDefault.default.createElement(_movieCard.MovieCard, {
@@ -21979,7 +21980,7 @@ class MainView extends _reactDefault.default.Component {
                 },
                 __source: {
                     fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/main-view/main-view.jsx",
-                    lineNumber: 76
+                    lineNumber: 80
                 },
                 __self: this
             }))
@@ -21993,7 +21994,7 @@ exports.default = MainView;
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"3b2NM","../movie-view/movie-view":"2Ia6h","../movie-card/movie-card":"iiGD0","@parcel/transformer-js/src/esmodule-helpers.js":"7IoRK","../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"3QRYi","axios":"7rA65","../login-view/login-view":"6ZzB0","../registration-view/registration-view":"62Lx3","react-bootstrap/Col":"2D0r8","react-bootstrap/Row":"3fzwD","react-bootstrap/Navbar":"3qLFd"}],"2Ia6h":[function(require,module,exports) {
+},{"react":"3b2NM","../movie-view/movie-view":"2Ia6h","../movie-card/movie-card":"iiGD0","@parcel/transformer-js/src/esmodule-helpers.js":"7IoRK","../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"3QRYi","axios":"7rA65","../login-view/login-view":"6ZzB0","../registration-view/registration-view":"62Lx3","react-bootstrap/Col":"2D0r8","react-bootstrap/Row":"3fzwD","react-bootstrap/Navbar":"3qLFd","../director-view/director-view":"3LIJC"}],"2Ia6h":[function(require,module,exports) {
 var helpers = require("../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -28198,7 +28199,9 @@ var _default = Row;
 exports.default = _default;
 module.exports = exports["default"];
 
-},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","react":"3b2NM","./ThemeProvider":"4rz1S"}],"5zsSU":[function() {},{}],"3Mt3t":[function(require,module,exports) {
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","react":"3b2NM","./ThemeProvider":"4rz1S"}],"3LIJC":[function(require,module,exports) {
+
+},{}],"5zsSU":[function() {},{}],"3Mt3t":[function(require,module,exports) {
 "use strict";
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 exports.__esModule = true;

@@ -19,7 +19,7 @@ export class MovieCard extends React.Component {
       </Card>
     );
   }
-};
+}
 
 MovieCard.propTypes = {
   movie: PropTypes.shape({

@@ -5,11 +5,13 @@ import { LoginView } from '../login-view/login-view';
 import { RegistrationView } from '../registration-view/registration-view';
 import { MovieView } from '../movie-view/movie-view';
 import { MovieCard } from '../movie-card/movie-card';
+import { DirectorView } from '../director-view/director-view';
+
 
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-
 import Navbar from 'react-bootstrap/Navbar';
+
 
 
 export class MainView extends React.Component {
@@ -55,7 +57,6 @@ export class MainView extends React.Component {
 
 
   render() {
-
     const { movies, selectedMovie, user, register } = this.state;
     if (!user && register) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
 
@@ -64,7 +65,10 @@ export class MainView extends React.Component {
     if (movies.length === 0) return <div className="main-view" />;
 
     return (
+
+
       <Row className="main-view justify-content-md-center">
+
         {selectedMovie
           ? (
             <Col md={8}>
