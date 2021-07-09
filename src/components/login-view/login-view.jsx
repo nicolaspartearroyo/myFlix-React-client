@@ -14,7 +14,6 @@ export function LoginView(props) {
     props.onLoggedIn(username);
   };
 
-
   return (
     <div className="login">
       <Form>
