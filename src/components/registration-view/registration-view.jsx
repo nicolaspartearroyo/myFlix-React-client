@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from 'prop-types';
+import Button from 'react-bootstrap/Button';
+import Navbar from 'react-bootstrap/Navbar';
 
 
 export function RegistrationView(props) {
@@ -56,11 +58,11 @@ export function RegistrationView(props) {
           />
         </label>
       </label>
-      {/* <button type="submit" onClick={handleSubmit}>
-        <button onClick={() => { handleSubmit(null); }}>Back</button>
+      <Button variant="primary" type="submit" onClick={handleSubmit}>
+        <Button onClick={() => { handleSubmit(null); }}>Back</Button>
         Submit
-      </button> */}
-    </form>
+      </Button> * /
+    </form >
   );
 }
 
