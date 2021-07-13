@@ -1,18 +1,26 @@
+// Modules
 import React from 'react';
 import axios from 'axios';
 
+// React-Bootstrap Components
 import { LoginView } from '../login-view/login-view';
 import { RegistrationView } from '../registration-view/registration-view';
 import { MovieView } from '../movie-view/movie-view';
 import { MovieCard } from '../movie-card/movie-card';
+import { DirectorView } from '../director-view/director-view';
+import { GenreView } from '../genre-view/genre-view';
+import { ProfileView } from '../profile-view/profile-view';
+import { NavBar } from '../navbar-view/navbar-view';
 
-
+// React-Bootstrap Components
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import { Navbar, Nav, NavDropdown, Form, FormControl } from 'react-bootstrap';
-import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 
+// React-router-DOM components
+import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
+
+// SCSS Styling import
 import './main-view.scss';
 
 
@@ -21,34 +29,72 @@ export class MainView extends React.Component {
     super();
     this.state = {
       movies: [],
-      selectedMovie: null,
-      user: null,
-      register: true
+      user: null
     };
   }
 
   componentDidMount() {
-    axios.get('https://myflixbypartearroyo.herokuapp.com/movies')
+    let accessToken = localStorage.getItem('token');
+    if (accessToken !== null) {
+      this.setState({
+        user: localStorage.getItem('user')
+      });
+      this.getMovies(accessToken);
+    }
+  }
+
+  // Log In
+  onLoggedIn(authData) {
+    console.log(authData);
+    this.setState({
+      user: authData.user.Username
+    });
+
+    localStorage.setItem('token', authData.token);
+    localStorage.setItem('user', authData.user.Username);
+    this.getMovies(authData.token);
+  }
+
+  //Log Out
+  onLoggedOut() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    this.setState({
+      user: null
+    });
+  }
+
+  //  Get user recent data from DB
+  getUsers(token) {
+    axios.get('https://myflixbypartearroyo.herokuapp.com//users', {
+      headers: { Authorization: `Bearer ${token}` }
+    })
       .then(response => {
+        // Assign the result to the state
         this.setState({
-          movies: response.data
+          users: response.data
         });
+        console.log(response)
       })
-      .catch(error => {
+      .catch(function (error) {
         console.log(error);
       });
   }
 
-  setSelectedMovie(movie) {
-    this.setState({
-      selectedMovie: movie
-    });
-  }
-
-  onLoggedIn(user) {
-    this.setState({
-      user
-    });
+  //   Get all movies in DB
+  getMovies(token) {
+    axios.get('https://myflixbypartearroyo.herokuapp.com/movies', {
+      headers: { Authorization: `Bearer ${token}` }
+    })
+      .then(response => {
+        // Assign the result to the state
+        this.setState({
+          movies: response.data
+        });
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
   }
 
   onRegister(register) {
@@ -59,58 +105,81 @@ export class MainView extends React.Component {
 
 
   render() {
-    const { movies, selectedMovie, user, register } = this.state;
-    if (!user && register) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
-
-    if (!user && !register) return <RegistrationView onRegister={register => this.onRegister(register)} />;
-
-    if (movies.length === 0) return <div className="main-view" />;
-
+    const { movies, user } = this.state;
     return (
-      <div className="main-view-class">
-        <header>
-          <Navbar bg="dark" collapseOnSelect fixed='top' expand="lg" variant="dark">
-            <Navbar.Brand href="#" >myFlix</Navbar.Brand>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav">
-              <Nav className="mr-auto">
-                <Nav.Link href="#">Movies</Nav.Link>
-                <Nav.Link href="#">Directors</Nav.Link>
-                <Nav.Link href="#">Genres</Nav.Link>
-                <NavDropdown title="Profile" id="basic-nav-dropdown">
-                  <NavDropdown.Item href="#">User</NavDropdown.Item>
-                  <NavDropdown.Item href="#">Settings</NavDropdown.Item>
-                  <NavDropdown.Item href="#">Favorite Movies</NavDropdown.Item>
-                </NavDropdown>
+      <Router>
+        <Row className="main-view justify-content-md-center">
 
-              </Nav>
-              <Form inline>
-                <FormControl type="text" placeholder="Search" />
-                <Button variant="dark">Search</Button>
-              </Form>
-            </Navbar.Collapse>
-          </Navbar>
-        </header>
+          <Route exact path="/" render={() => {
+            if (!user) return <Col>
+              <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
+            </Col>
+            if (movies.length === 0) return <div className="main-view" />;
+            return movies.map(m => (
+              <Col md={3} key={m._id}>
+                <MovieCard movie={m} />
+              </Col>
+            ))
+          }} />
 
-        <Container fluid className="container-main">
-          <Row className="main-view justify-content-lg-center">
-            {selectedMovie
-              ? (
-                <Col>
-                  <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }} />
-                </Col>
-              )
-              : movies.map(movie => (
-                <Col md={3}>
-                  <MovieCard key={movie._id} movie={movie} onMovieClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }} />
-                </Col>
-              ))
-            }
+          <Route path="/register" render={() => {
+            if (user) return <Redirect to="/" />
+            return <Col>
+              <RegistrationView />
+            </Col>
+          }} />
 
-          </Row>
-        </Container></div>
+          <Route path="/profile" render={() => {
+            if (!user) return <Col>
+              <ProfileView />
+            </Col>
+          }} />
+
+          <Route path="/movies/:movieId" render={({ match, history }) => {
+            if (!user) return <Col>
+              <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
+            </Col>
+            if (movies.length === 0) return <div className="main-view" />;
+            return <Col md={8}>
+              <MovieView movie={movies.find(m => m._id === match.params.movieId)} onBackClick={() => history.goBack()} />
+            </Col>
+          }} />
+
+          <Route path="/movies/:Title" render={({ match, history }) => {
+            if (!user) return <Col>
+              <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
+            </Col>
+            if (movies.length === 0) return <div className="main-view" />;
+            return <Col md={8}>
+              <MovieView movie={movies.find(m => m._id === match.params.movieId)} onBackClick={() => history.goBack()} />
+            </Col>
+          }} />
+
+          <Route path="/directors/:Name" render={({ match, history }) => {
+            if (!user) return <Col>
+              <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
+            </Col>
+            if (movies.length === 0) return <div className="main-view" />;
+            return <Col md={8}>
+              <DirectorView director={movies.find(m => m.Director.Name === match.params.name).Director} onBackClick={() => history.goBack()} />
+            </Col>
+          }
+          } />
+
+          <Route path="/genres/:Name" render={({ match, history }) => {
+            if (!user) return <Col>
+              <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
+            </Col>
+            if (movies.length === 0) return <div className="main-view" />;
+            return <Col md={8}>
+              <GenreView genre={movies.find(m => m.Genre.Name === match.params.name).Genre} onBackClick={() => history.goBack()} />
+            </Col>
+          }
+          } />
+        </Row>
+      </Router>
     );
   }
-}
+};
 
 export default MainView;

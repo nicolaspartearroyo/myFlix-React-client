@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
+import axios from 'axios';
+import PropTypes from 'prop-types';
+
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import { Link } from "react-router-dom";
 import './login-view.scss';
 
 export function LoginView(props) {
@@ -9,9 +13,18 @@ export function LoginView(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(username, password);
-    // Send a request to the server for authentication, then call props.onLoggedIn(username)
-    props.onLoggedIn(username);
+    /* Send a request to the server for authentication */
+    axios.post('https://myflixbypartearroyo.herokuapp.com/users', {
+      Username: username,
+      Password: password
+    })
+      .then(response => {
+        const data = response.data;
+        props.onLoggedIn(data);
+      })
+      .catch(e => {
+        console.log('no such user')
+      });
   };
 
   return (
@@ -19,17 +32,32 @@ export function LoginView(props) {
       <Form>
         <Form.Group controlId="formUsername">
           <Form.Label>Username:</Form.Label>
-          <Form.Control type="text" onChange={e => setUsername(e.target.value)} />
+          <Form.Control required type="text" value={username} onChange={e => setUsername(e.target.value)} />
         </Form.Group>
 
         <Form.Group controlId="formPassword">
           <Form.Label>Password:</Form.Label>
-          <Form.Control type="password" onChange={e => setPassword(e.target.value)} />
+          <Form.Control required type="password" value={password} onChange={e => setPassword(e.target.value)} />
+          <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+          <Form.Control.Feedback type="invalid">Please provide your password</Form.Control.Feedback>
         </Form.Group>
-        <Button variant="primary" type="submit" onClick={handleSubmit}>
-          Log in
-        </Button>
+        <span>
+          <Button variant="primary" type="submit" onClick={handleSubmit}>Log in</Button>
+          {' '}
+          <Link to={`/register`}>
+            <Button variant="success link">Register</Button>
+          </Link>
+        </span>
       </Form>
     </div>
   );
 }
+
+
+LoginView.propTypes = {
+  user: PropTypes.shape({
+    username: PropTypes.string.isRequired,
+    password: PropTypes.string.isRequired,
+  }),
+  onLoggedIn: PropTypes.func.isRequired
+};
