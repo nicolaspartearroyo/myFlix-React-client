@@ -29,7 +29,7 @@ export class MainView extends React.Component {
     super();
     this.state = {
       movies: [],
-      user: null
+      user: null,
     };
   }
 
@@ -65,9 +65,8 @@ export class MainView extends React.Component {
   }
 
   //  Get user recent data from DB
-  getUsers(token, username) {
-    const url = "https://myflixbypartearroyo.herokuapp.com/users/" + username;
-    axios.get(url, {
+  getUsers(token) {
+    axios.post('https://myflixbypartearroyo.herokuapp.com/users/', {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(response => {
@@ -106,7 +105,7 @@ export class MainView extends React.Component {
 
 
   render() {
-    const { movies, user } = this.state;
+    const { movies, user, } = this.state;
     console.log("render", user);
 
     return (

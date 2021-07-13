@@ -7,6 +7,7 @@ import Row from 'react-bootstrap/row';
 import Col from 'react-bootstrap/Col';
 import { Link } from "react-router-dom";
 
+
 import './registration-view.scss';
 
 export function RegistrationView(props) {
@@ -162,6 +163,7 @@ export function RegistrationView(props) {
 
 RegistrationView.propTypes = {
   register: PropTypes.shape({
+    Name: PropTypes.string.isRequired,
     Username: PropTypes.string.isRequired,
     Password: PropTypes.string.isRequired,
     Email: PropTypes.string.isRequired,
