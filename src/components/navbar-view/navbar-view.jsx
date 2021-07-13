@@ -2,7 +2,6 @@ import React from 'react';
 import { Navbar, Button } from 'react-bootstrap';
 
 function NavBar() {
-
   return (
 
     <Navbar bg="dark" collapseOnSelect fixed='top' expand="lg" variant="dark" >

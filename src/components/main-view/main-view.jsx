@@ -65,8 +65,9 @@ export class MainView extends React.Component {
   }
 
   //  Get user recent data from DB
-  getUsers(token) {
-    axios.get('https://myflixbypartearroyo.herokuapp.com//users', {
+  getUsers(token, username) {
+    const url = "https://myflixbypartearroyo.herokuapp.com/users/" + username;
+    axios.get(url, {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(response => {
@@ -106,6 +107,8 @@ export class MainView extends React.Component {
 
   render() {
     const { movies, user } = this.state;
+    console.log("render", user);
+
     return (
       <Router>
         <Row className="main-view justify-content-md-center">
