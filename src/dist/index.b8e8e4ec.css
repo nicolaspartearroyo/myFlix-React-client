@@ -1,4 +1,28 @@
+.image-container {
+  position: relative;
+  transition: transform 0.2s;
+  border-style: none;
+}
 
+.image-container:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.image-container:hover .overlay {
+  opacity: 1;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  transition: 0.5s ease;
+  opacity: 0;
+  bottom: 0;
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+}
 .login {
   padding: 30px;
   border: 0.3px solid grey;
@@ -25,6 +49,16 @@ body {
 
 .col-md-3 {
   padding: 5px;
+}
+.profile-view {
+  padding: 30px;
+  border: 0.3px solid grey;
+  box-shadow: 5px 5px 5px grey;
+  border-radius: 15px;
+}
+
+.app-container {
+  padding: 30px;
 }
 .my-flix {
   color: steelblue;

@@ -55,18 +55,9 @@ export class MainView extends React.Component {
     this.getMovies(authData.token);
   }
 
-  //Log Out
-  onLoggedOut() {
-    localStorage.removeItem('token');
-    localStorage.removeItem('user');
-    this.setState({
-      user: null
-    });
-  }
-
   //  Get user recent data from DB
   getUsers(token) {
-    axios.post('https://myflixbypartearroyo.herokuapp.com/users/', {
+    axios.post('https://myflixbypartearroyo.herokuapp.com/users', {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(response => {
@@ -105,11 +96,13 @@ export class MainView extends React.Component {
 
 
   render() {
-    const { movies, user, } = this.state;
+    const { movies, user } = this.state;
     console.log("render", user);
 
     return (
       <Router>
+        <NavBar user={user} />
+
         <Row className="main-view justify-content-md-center">
 
           <Route exact path="/" render={() => {
@@ -147,17 +140,7 @@ export class MainView extends React.Component {
             </Col>
           }} />
 
-          <Route path="/movies/:Title" render={({ match, history }) => {
-            if (!user) return <Col>
-              <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
-            </Col>
-            if (movies.length === 0) return <div className="main-view" />;
-            return <Col md={8}>
-              <MovieView movie={movies.find(m => m._id === match.params.movieId)} onBackClick={() => history.goBack()} />
-            </Col>
-          }} />
-
-          <Route path="/directors/:Name" render={({ match, history }) => {
+          <Route path="/directors/:name" render={({ match, history }) => {
             if (!user) return <Col>
               <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
             </Col>
@@ -168,7 +151,7 @@ export class MainView extends React.Component {
           }
           } />
 
-          <Route path="/genres/:Name" render={({ match, history }) => {
+          <Route path="/genres/:name" render={({ match, history }) => {
             if (!user) return <Col>
               <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
             </Col>
@@ -176,8 +159,14 @@ export class MainView extends React.Component {
             return <Col md={8}>
               <GenreView genre={movies.find(m => m.Genre.Name === match.params.name).Genre} onBackClick={() => history.goBack()} />
             </Col>
-          }
-          } />
+          }} />
+
+          <Route exact path='/users/:username' render={({ history }) => {
+            if (!user) return <LoginView onLoggedIn={(data) => this.onLoggedIn(data)} />;
+            if (movies.length === 0) return;
+            return <ProfileView history={history} movies={movies} />
+          }} />
+
         </Row>
       </Router>
     );
