@@ -53,7 +53,8 @@ export class ProfileView extends React.Component {
     const token = localStorage.getItem('token');
     const username = localStorage.getItem('user');
 
-    axios.delete(`https://myflixbypartearroyo.herokuapp.com/users/${username}/movies/${movie._id}`, {
+
+    axios.delete(`https://myflixbypartearroyo.herokuapp.com/users/${username}/favourites/${movie._id}`, {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then(() => {
@@ -63,7 +64,7 @@ export class ProfileView extends React.Component {
       .catch(function (error) {
         console.log(error);
       })
-      .then(() => window.location.reload());
+    // .then(() => window.location.reload());
   }
 
   handleUpdate(e, newName, newUsername, newPassword, newEmail, newBirthdate) {
