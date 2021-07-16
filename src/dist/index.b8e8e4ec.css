@@ -60,6 +60,10 @@ body {
 .app-container {
   padding: 30px;
 }
+
+.favorites-movies {
+  display: inline-block;
+}
 .my-flix {
   color: steelblue;
 }
