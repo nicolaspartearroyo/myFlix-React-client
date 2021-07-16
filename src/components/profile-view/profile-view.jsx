@@ -186,7 +186,7 @@ export class ProfileView extends React.Component {
             </div>
           </Card.Body>
 
-          <h1 className="section">Update Profile</h1>
+          <h1 className="Profile">Update Profile</h1>
           <Card.Body>
             <Form noValidate validated={validated} className="update-form" onSubmit={(e) => this.handleUpdate(e, this.Name, this.Username, this.Password, this.Email, this.Birthdate)}>
 
@@ -195,24 +195,24 @@ export class ProfileView extends React.Component {
                 <Form.Control type="text" placeholder="Change Name" onChange={(e) => this.setName(e.target.value)} />
               </Form.Group>
 
-              <Form.Group controlId="formBasicUsername">
+              <Form.Group controlId="formUsername">
                 <Form.Label className="form-label">Username</Form.Label>
                 <Form.Control type="text" placeholder="Change Username" onChange={(e) => this.setUsername(e.target.value)} />
               </Form.Group>
 
-              <Form.Group controlId="formBasicPassword">
+              <Form.Group controlId="formPassword">
                 <Form.Label className="form-label">
                   Password<span className="required">*</span>
                 </Form.Label>
                 <Form.Control type="password" placeholder="New Password" onChange={(e) => this.setPassword(e.target.value)} />
               </Form.Group>
 
-              <Form.Group controlId="formBasicEmail">
+              <Form.Group controlId="formEmail">
                 <Form.Label className="form-label">Email</Form.Label>
                 <Form.Control type="email" placeholder="Change Email" onChange={(e) => this.setEmail(e.target.value)} />
               </Form.Group>
 
-              <Form.Group controlId="formBasicBirthday">
+              <Form.Group controlId="formBirthdate">
                 <Form.Label className="form-label">Birthdate</Form.Label>
                 <Form.Control type="date" placeholder="Change Birthdate" onChange={(e) => this.setBirthdate(e.target.value)} />
               </Form.Group>
