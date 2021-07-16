@@ -15,7 +15,6 @@ import { NavBar } from '../navbar-view/navbar-view';
 // React-Bootstrap Components
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import Container from 'react-bootstrap/Container';
 
 // React-router-DOM components
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";

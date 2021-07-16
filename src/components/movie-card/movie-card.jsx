@@ -12,7 +12,7 @@ export class MovieCard extends React.Component {
     const { movie } = this.props;
 
     return (
-      <Card bg='secondary' text='white'>
+      <Card style={{ border: 0 }} bg='secondary' text='white'>
         <Link to={`/movies/${movie._id}`}>
           <Card.Img className="image-container" variant="top" src={movie.ImageURL} />
         </Link>
@@ -20,7 +20,7 @@ export class MovieCard extends React.Component {
           <Card.Title><h4>{movie.Title}</h4></Card.Title>
           <Card.Text>{movie.Description}</Card.Text>
           <Link to={`/movies/${movie._id}`}>
-            <Button variant="primary">Open</Button>
+            <Button variant="dark">Open</Button>
           </Link>
         </Card.Body>
       </Card>
