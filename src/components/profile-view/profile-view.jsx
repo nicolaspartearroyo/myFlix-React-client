@@ -54,10 +54,9 @@ export class ProfileView extends React.Component {
     const username = localStorage.getItem('user');
 
 
-    axios
-      .delete(`https://myflixbypartearroyo.herokuapp.com/users/${username}/movies/${movie._id}`, {
-        headers: { Authorization: `Bearer ${token}` },
-      })
+    axios.delete(`https://myflixbypartearroyo.herokuapp.com/users/${username}/movies/${movie._id}`, {
+      headers: { Authorization: `Bearer ${token}` },
+    })
       .then(() => {
         alert('Movie was removed');
         this.componentDidMount();
