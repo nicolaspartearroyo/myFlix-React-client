@@ -1,12 +1,6 @@
 .button-space {
-  padding-bottom: 12px;
+  padding: 5px 5px 5px 0px;
 }
-body {
-  background: #141414;
-  color: #ffffff;
-  padding-top: 40px;
-}
-
 .image-container {
   position: relative;
   transition: transform 0.2s;

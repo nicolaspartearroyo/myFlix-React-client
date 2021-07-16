@@ -22219,7 +22219,7 @@ class MovieView extends _reactDefault.default.Component {
             },
             __self: this
         }, movie.Description)), /*#__PURE__*/ _reactDefault.default.createElement("div", {
-            className: "movie-genre",
+            className: "movie-genre button-space",
             __source: {
                 fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/movie-view/movie-view.jsx",
                 lineNumber: 54
@@ -22232,46 +22232,32 @@ class MovieView extends _reactDefault.default.Component {
                 lineNumber: 55
             },
             __self: this
-        }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
-            variant: "link",
+        }, "Genre: "), /*#__PURE__*/ _reactDefault.default.createElement("span", {
+            className: "value",
             __source: {
                 fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/movie-view/movie-view.jsx",
                 lineNumber: 56
             },
             __self: this
-        }, "Genre: ")), /*#__PURE__*/ _reactDefault.default.createElement("span", {
-            className: "value",
+        }, movie.Genre.Name)), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "movie-director button-space",
             __source: {
                 fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/movie-view/movie-view.jsx",
                 lineNumber: 58
-            },
-            __self: this
-        }, movie.Genre.Name)), /*#__PURE__*/ _reactDefault.default.createElement("div", {
-            className: "movie-director",
-            __source: {
-                fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 60
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
             to: `/directors/${movie.Director.Name}`,
             __source: {
                 fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 61
+                lineNumber: 59
             },
             __self: this
-        }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
-            variant: "link",
-            __source: {
-                fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 62
-            },
-            __self: this
-        }, "Director: ")), /*#__PURE__*/ _reactDefault.default.createElement("span", {
+        }, "Director: "), /*#__PURE__*/ _reactDefault.default.createElement("span", {
             className: "value",
             __source: {
                 fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 64
+                lineNumber: 60
             },
             __self: this
         }, movie.Director.Name)), /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
@@ -22282,14 +22268,14 @@ class MovieView extends _reactDefault.default.Component {
             ,
             __source: {
                 fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 66
+                lineNumber: 62
             },
             __self: this
         }, "Add to Favorites"), /*#__PURE__*/ _reactDefault.default.createElement("div", {
             className: "button-space",
             __source: {
                 fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 69
+                lineNumber: 65
             },
             __self: this
         }), /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
@@ -22299,7 +22285,7 @@ class MovieView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 70
+                lineNumber: 66
             },
             __self: this
         }, "Back")));
