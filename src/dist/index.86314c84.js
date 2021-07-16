@@ -22137,6 +22137,7 @@ var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
 var _reactRouterDom = require("react-router-dom");
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
+var _movieViewScss = require("./movie-view.scss");
 class MovieView extends _reactDefault.default.Component {
     keypressCallback(event) {
         console.log(event.key);
@@ -22192,104 +22193,98 @@ class MovieView extends _reactDefault.default.Component {
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("h1", {
+            bg: "primary",
             __source: {
                 fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/movie-view/movie-view.jsx",
                 lineNumber: 47
             },
             __self: this
-        }, /*#__PURE__*/ _reactDefault.default.createElement(_badgeDefault.default, {
-            bg: "primary",
+        }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
+            className: "value",
             __source: {
                 fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/movie-view/movie-view.jsx",
                 lineNumber: 48
             },
             __self: this
-        }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
-            className: "value",
-            __source: {
-                fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 49
-            },
-            __self: this
-        }, movie.Title)))), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        }, movie.Title))), /*#__PURE__*/ _reactDefault.default.createElement("div", {
             className: "movie-description",
             __source: {
                 fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 52
+                lineNumber: 51
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
             className: "value",
             __source: {
                 fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 53
+                lineNumber: 52
             },
             __self: this
         }, movie.Description)), /*#__PURE__*/ _reactDefault.default.createElement("div", {
             className: "movie-genre",
             __source: {
                 fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 55
+                lineNumber: 54
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
             to: `/genres/${movie.Genre.Name}`,
             __source: {
                 fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 56
+                lineNumber: 55
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
             variant: "link",
             __source: {
                 fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 57
+                lineNumber: 56
             },
             __self: this
         }, "Genre: ")), /*#__PURE__*/ _reactDefault.default.createElement("span", {
             className: "value",
             __source: {
                 fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 59
+                lineNumber: 58
             },
             __self: this
         }, movie.Genre.Name)), /*#__PURE__*/ _reactDefault.default.createElement("div", {
             className: "movie-director",
             __source: {
                 fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 61
+                lineNumber: 60
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
             to: `/directors/${movie.Director.Name}`,
             __source: {
                 fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 62
+                lineNumber: 61
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
             variant: "link",
             __source: {
                 fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 63
+                lineNumber: 62
             },
             __self: this
         }, "Director: ")), /*#__PURE__*/ _reactDefault.default.createElement("span", {
             className: "value",
             __source: {
                 fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 65
+                lineNumber: 64
             },
             __self: this
         }, movie.Director.Name)), /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
-            variant: "danger",
+            variant: "success",
             className: "fav-button",
             value: movie._id,
             onClick: (e)=>this.addFavorite(e, movie)
             ,
             __source: {
                 fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 67
+                lineNumber: 66
             },
             __self: this
         }, "Add to Favorites"), /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
@@ -22299,7 +22294,7 @@ class MovieView extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/movie-view/movie-view.jsx",
-                lineNumber: 70
+                lineNumber: 69
             },
             __self: this
         }, "Back")));
@@ -22325,7 +22320,7 @@ MovieView.propTypes = {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"3b2NM","@parcel/transformer-js/src/esmodule-helpers.js":"7IoRK","../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"3QRYi","react-bootstrap/Button":"1ru0l","react-bootstrap/Badge":"2aFSj","react-router-dom":"1PMSK","prop-types":"4dfy5","axios":"7rA65"}],"7IoRK":[function(require,module,exports) {
+},{"react":"3b2NM","@parcel/transformer-js/src/esmodule-helpers.js":"7IoRK","../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"3QRYi","react-bootstrap/Button":"1ru0l","react-bootstrap/Badge":"2aFSj","react-router-dom":"1PMSK","prop-types":"4dfy5","axios":"7rA65","./movie-view.scss":"7Wmdb"}],"7IoRK":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -27254,7 +27249,7 @@ module.exports = CancelToken;
     return typeof payload === 'object' && payload.isAxiosError === true;
 };
 
-},{}],"iiGD0":[function(require,module,exports) {
+},{}],"7Wmdb":[function() {},{}],"iiGD0":[function(require,module,exports) {
 var helpers = require("../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;

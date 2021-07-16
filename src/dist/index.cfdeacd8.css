@@ -1,3 +1,6 @@
+.movie-genre {
+  padding-left: 0%;
+}
 body {
   background: #141414;
   color: #ffffff;
@@ -49,6 +52,10 @@ body {
 div {
   width: 100%;
 }
+html {
+  background: #141414;
+}
+
 .app-container {
   background: #141414;
   color: #ffffff;
@@ -75,4 +82,4 @@ div {
 .my-flix {
   color: steelblue;
 }
-/*# sourceMappingURL=index.b8e8e4ec.css.map */
+/*# sourceMappingURL=index.cfdeacd8.css.map */
