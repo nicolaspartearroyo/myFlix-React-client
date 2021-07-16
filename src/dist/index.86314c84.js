@@ -40230,6 +40230,9 @@ class ProfileView extends _reactDefault.default.Component {
             },
             __self: this
         }, /*#__PURE__*/ _reactDefault.default.createElement("h2", {
+            style: {
+                padding: '20px'
+            },
             __source: {
                 fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/profile-view/profile-view.jsx",
                 lineNumber: 162
