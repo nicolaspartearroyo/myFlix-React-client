@@ -158,77 +158,69 @@ export class ProfileView extends React.Component {
 
     return (
       <Row className="profile-view">
-        <Card className="profile-card">
+        <Card style={{ background: '#141414' }} className="profile-card ">
           <h2>Your Favorites Movies</h2>
-          <Card.Body>
-            {FavoriteMovies.length === 0 && <div className="text-center">Empty.</div>}
+          {FavoriteMovies.length === 0 && <div className="text-center">Empty.</div>}
 
-            <div className="favorites-movies ">
-              {FavoriteMovies.length > 0 &&
-                movies.map((movie) => {
-                  if (movie._id === FavoriteMovies.find((favMovie) => favMovie === movie._id)) {
-                    return (
-                      <CardDeck key={movie._id} className="movie-card-deck">
-                        <Card className="favorites-item card-content" style={{ width: '16rem' }} key={movie._id}>
-                          <Card.Img style={{ width: '18rem' }} className="movieCard" variant="top" src={movie.ImageURL} />
-                          <Card.Body>
-                            <Card.Title className="movie-card-title">{movie.Title}</Card.Title>
-                            <Button size='sm' className='profile-button remove-favorite' variant='danger' value={movie._id} onClick={() => this.removeFavouriteMovie(movie)}>
-                              Remove
-                            </Button>
-                          </Card.Body>
-                        </Card>
-                      </CardDeck>
-                    );
-                  }
-                })}
-            </div>
-          </Card.Body>
+          <div className="favorites-movies ">
+            {FavoriteMovies.length > 0 &&
+              movies.map((movie) => {
+                if (movie._id === FavoriteMovies.find((favMovie) => favMovie === movie._id)) {
+                  return (
+                    <CardDeck key={movie._id} className="movie-card-deck">
+                      <Card className="favorites-item card-content" style={{ background: '#141414', width: '16rem' }} key={movie._id}>
+                        <Card.Img style={{ width: '18rem' }} className="movieCard" variant="top" src={movie.ImageURL} />
+                        <Card.Title className="movie-card-title">{movie.Title}</Card.Title>
+                        <Button size='sm' className='profile-button remove-favorite' variant='danger' value={movie._id} onClick={() => this.removeFavouriteMovie(movie)}>
+                          Remove
+                        </Button>
+                      </Card>
+                    </CardDeck>
+                  );
+                }
+              })}
+          </div>
 
           <h1 className="Profile">Update Profile</h1>
-          <Card.Body>
-            <Form noValidate validated={validated} className="update-form" onSubmit={(e) => this.handleUpdate(e, this.Name, this.Username, this.Password, this.Email, this.Birthdate)}>
+          <Form noValidate validated={validated} className="update-form" onSubmit={(e) => this.handleUpdate(e, this.Name, this.Username, this.Password, this.Email, this.Birthdate)}>
 
-              <Form.Group controlId="formName">
-                <Form.Label className="form-label">Name</Form.Label>
-                <Form.Control type="text" placeholder="Change Name" onChange={(e) => this.setName(e.target.value)} />
-              </Form.Group>
+            <Form.Group controlId="formName">
+              <Form.Label className="form-label">Name</Form.Label>
+              <Form.Control type="text" placeholder="Change Name" onChange={(e) => this.setName(e.target.value)} />
+            </Form.Group>
 
-              <Form.Group controlId="formUsername">
-                <Form.Label className="form-label">Username</Form.Label>
-                <Form.Control type="text" placeholder="Change Username" onChange={(e) => this.setUsername(e.target.value)} />
-              </Form.Group>
+            <Form.Group controlId="formUsername">
+              <Form.Label className="form-label">Username</Form.Label>
+              <Form.Control type="text" placeholder="Change Username" onChange={(e) => this.setUsername(e.target.value)} />
+            </Form.Group>
 
-              <Form.Group controlId="formPassword">
-                <Form.Label className="form-label">
-                  Password<span className="required">*</span>
-                </Form.Label>
-                <Form.Control type="password" placeholder="New Password" onChange={(e) => this.setPassword(e.target.value)} />
-              </Form.Group>
+            <Form.Group controlId="formPassword">
+              <Form.Label className="form-label">
+                Password<span className="required">*</span>
+              </Form.Label>
+              <Form.Control type="password" placeholder="New Password" onChange={(e) => this.setPassword(e.target.value)} />
+            </Form.Group>
 
-              <Form.Group controlId="formEmail">
-                <Form.Label className="form-label">Email</Form.Label>
-                <Form.Control type="email" placeholder="Change Email" onChange={(e) => this.setEmail(e.target.value)} />
-              </Form.Group>
+            <Form.Group controlId="formEmail">
+              <Form.Label className="form-label">Email</Form.Label>
+              <Form.Control type="email" placeholder="Change Email" onChange={(e) => this.setEmail(e.target.value)} />
+            </Form.Group>
 
-              <Form.Group controlId="formBirthdate">
-                <Form.Label className="form-label">Birthdate</Form.Label>
-                <Form.Control type="date" placeholder="Change Birthdate" onChange={(e) => this.setBirthdate(e.target.value)} />
-              </Form.Group>
+            <Form.Group controlId="formBirthdate">
+              <Form.Label className="form-label">Birthdate</Form.Label>
+              <Form.Control type="date" placeholder="Change Birthdate" onChange={(e) => this.setBirthdate(e.target.value)} />
+            </Form.Group>
 
-              <Button variant='danger' type="submit">
-                Update
-              </Button>
+            <Button variant='danger' type="submit">
+              Update
+            </Button>
 
-              <h3>Delete your Account</h3>
-              <Card.Body>
-                <Button variant='danger' onClick={(e) => this.handleDeleteUser(e)}>
-                  Delete Account
-                </Button>
-              </Card.Body>
-            </Form>
+            <h3>Delete your Account</h3>
+            <Button variant='danger' onClick={(e) => this.handleDeleteUser(e)}>
+              Delete Account
+            </Button>
+          </Form>
 
-          </Card.Body>
         </Card>
       </Row >
     );

@@ -1,5 +1,5 @@
-.movie-genre {
-  padding-left: 0%;
+.button-space {
+  padding-bottom: 12px;
 }
 body {
   background: #141414;
@@ -32,16 +32,7 @@ body {
   padding: 20px;
   text-align: center;
 }
-.login {
-  padding: 30px;
-  border: 0.3px solid grey;
-  box-shadow: 5px 5px 5px grey;
-  border-radius: 15px;
-}
 
-.app-container {
-  padding: 30px;
-}
 .register {
   padding: 30px;
   border: 0.3px solid grey;
@@ -56,6 +47,10 @@ html {
   background: #141414;
 }
 
+body {
+  background: #141414;
+}
+
 .app-container {
   background: #141414;
   color: #ffffff;
@@ -65,20 +60,7 @@ html {
 .col-md-3 {
   padding: 5px;
 }
-.profile-view {
-  padding: 30px;
-  border: 0.3px solid grey;
-  box-shadow: 5px 5px 5px grey;
-  border-radius: 15px;
-}
 
-.app-container {
-  padding: 30px;
-}
-
-.favorites-movies {
-  display: inline-block;
-}
 .my-flix {
   color: steelblue;
 }
