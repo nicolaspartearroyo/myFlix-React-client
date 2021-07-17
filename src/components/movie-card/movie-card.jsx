@@ -1,29 +1,52 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
+import axios from 'axios';
+import { Container, Card, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import './movie-card.scss';
 
-import { Link } from "react-router-dom";
-
-
 export class MovieCard extends React.Component {
+
+  addFavorite() {
+    const token = localStorage.getItem('token');
+    const username = localStorage.getItem('user');
+
+    axios.post(`https:myflixbypartearroyo.herokuapp.com/users/${username}/movies/${this.props.movie._id}`, {}, {
+      headers: { Authorization: `Bearer ${token}` }
+    })
+      .then(response => {
+        alert(`Added to Favorites List`)
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
+
   render() {
     const { movie } = this.props;
 
     return (
-      <Card style={{ border: 0 }} bg='secondary' text='white'>
-        <Link to={`/movies/${movie._id}`}>
-          <Card.Img className="image-container" variant="top" src={movie.ImageURL} />
-        </Link>
-        <Card.Body>
-          <Card.Title><h4>{movie.Title}</h4></Card.Title>
-          <Card.Text>{movie.Description}</Card.Text>
+      <Container fluid>
+
+        <Card style={{ border: 0 }} bg='secondary' text='white'>
           <Link to={`/movies/${movie._id}`}>
-            <Button variant="dark">Open</Button>
+            <Card.Img className="image-container" variant="top" src={movie.ImageURL} />
           </Link>
-        </Card.Body>
-      </Card>
+          <Card.Body>
+            <Button variant='dark ' className="fav-button d-flex align-items-center justify-content-center" value={movie._id} onClick={(e) => this.addFavorite(e, movie)}>
+              Add to Favorites
+            </Button>
+            {/* <Card.Title><h4>{movie.Title}</h4></Card.Title>
+             <Card.Text>
+              {movie.Description}
+            </Card.Text>
+            <Link to={`/movies/${movie._id}`}>
+              <Button variant="dark">Open</Button>
+            </Link> */}
+          </Card.Body>
+        </Card>
+      </Container>
+
     );
   }
 }
