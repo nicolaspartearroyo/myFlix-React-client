@@ -1,0 +1,75 @@
+.button-space {
+  padding-bottom: 12px;
+}
+body {
+  background: #141414;
+  color: #ffffff;
+  padding-top: 40px;
+}
+
+.image-container {
+  position: relative;
+  transition: transform 0.2s;
+  border-style: none;
+}
+
+.image-container:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.image-container:hover .overlay {
+  opacity: 1;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  transition: 0.5s ease;
+  opacity: 0;
+  bottom: 0;
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+}
+.login {
+  padding: 30px;
+  border: 0.3px solid grey;
+  box-shadow: 5px 5px 5px grey;
+  border-radius: 15px;
+}
+
+.app-container {
+  padding: 30px;
+}
+.register {
+  padding: 30px;
+  border: 0.3px solid grey;
+  box-shadow: 5px 5px 5px grey;
+  border-radius: 15px;
+}
+
+div {
+  width: 100%;
+}
+html {
+  background: #141414;
+}
+
+.app-container {
+  background: #141414;
+  color: #ffffff;
+  padding-top: 40px;
+}
+
+.col-md-3 {
+  padding: 5px;
+}
+.app-container {
+  padding: 30px;
+  background: #141414;
+}
+.my-flix {
+  color: steelblue;
+}
+/*# sourceMappingURL=index.HASH_REF_7eacc60e1632a8029f6cf004cfdeacd8.css.map */

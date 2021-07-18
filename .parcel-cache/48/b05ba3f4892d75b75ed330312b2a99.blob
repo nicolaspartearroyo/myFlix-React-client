@@ -1,0 +1,12 @@
+
+.login {
+  padding: 30px;
+  border: 1px solid #c5c5c5;
+  border-radius: 15px;
+  text-align: left;
+  background-color: #fff;
+}
+.my-flix {
+  color: steelblue;
+}
+/*# sourceMappingURL=index.HASH_REF_c3e04533bb0130a60c53f240b8e8e4ec.css.map */

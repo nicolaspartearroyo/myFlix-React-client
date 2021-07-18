@@ -1,0 +1,203 @@
+var helpers = require("../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "ProfileView", ()=>ProfileView
+);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+class ProfileView extends _reactDefault.default.Component {
+    constructor(){
+        super();
+        this.Username = null, this.Password = null, this.Email = null, this.Birthday = null;
+        this.state = {
+            Username: null,
+            Password: null,
+            Email: null,
+            Birthday: null,
+            FavoriteMovies: [],
+            validated: null
+        };
+    }
+    componentDidMount() {
+        const accessToken = localStorage.getItem('token');
+        if (accessToken !== null) this.getUser(accessToken);
+    }
+    getUser(token) {
+        const username = localStorage.getItem('user');
+        axios.get(`https://myflixbypartearroyo.herokuapp.com/users/${username}`, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        }).then((response)=>{
+            this.setState({
+                Username: response.data.Username,
+                Password: response.data.Password,
+                Email: response.data.Email,
+                Birthdate: response.data.Birthdate,
+                FavoriteMovies: response.data.FavoriteMovies
+            });
+        }).catch(function(error) {
+            console.log(error);
+        });
+    }
+    handleRemoveFavorite(id, movie) {
+        const username = localStorage.getItem('user');
+        const token = localStorage.getItem('token');
+        axios.delete(`https://myflixbypartearroyo.herokuapp.com/users/${username}/movies/${movie}`, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        }).then(()=>{
+            alert('Movie removed from your Favorites List.');
+            this.componentDidMount();
+        }).catch(function(error) {
+            console.log(error);
+        }).then(()=>window.location.reload()
+        );
+    }
+    render() {
+        const { FavoriteMovies , validated  } = this.state;
+        const username = localStorage.getItem('user');
+        const { movies  } = this.props;
+        return(/*#__PURE__*/ _reactDefault.default.createElement(Container, {
+            className: "profile-view",
+            __source: {
+                fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/profile-view/profile-view.jsx",
+                lineNumber: 68
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(Tabs, {
+            defaultActiveKey: "profile",
+            transition: false,
+            className: "profile-tabs",
+            __source: {
+                fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/profile-view/profile-view.jsx",
+                lineNumber: 69
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(Tab, {
+            className: "tab-item",
+            eventKey: "profile",
+            title: "Profile",
+            __source: {
+                fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/profile-view/profile-view.jsx",
+                lineNumber: 72
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(Card, {
+            className: "profile-card",
+            border: "info",
+            __source: {
+                fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/profile-view/profile-view.jsx",
+                lineNumber: 73
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(Card.Title, {
+            className: "profile-title",
+            __source: {
+                fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/profile-view/profile-view.jsx",
+                lineNumber: 74
+            },
+            __self: this
+        }, username, "'s Favorite Movies"), FavoriteMovies.length === 0 && /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "card-content",
+            __source: {
+                fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/profile-view/profile-view.jsx",
+                lineNumber: 75
+            },
+            __self: this
+        }, "You don't have any favorite movies yet!"), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "favorites-container",
+            __source: {
+                fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/profile-view/profile-view.jsx",
+                lineNumber: 77
+            },
+            __self: this
+        }, FavoriteMovies.length > 0 && movies.map((movie)=>{
+            if (movie._id === FavoriteMovies.find((favMovie)=>favMovie === movie._id
+            )) return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
+                key: movie._id,
+                __source: {
+                    fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/profile-view/profile-view.jsx",
+                    lineNumber: 82
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement(Card, {
+                className: "favorites-item card-content",
+                style: {
+                    width: '16rem',
+                    flex: 1
+                },
+                __source: {
+                    fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/profile-view/profile-view.jsx",
+                    lineNumber: 83
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement(Link, {
+                to: `/movies/${movie._id}`,
+                __source: {
+                    fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/profile-view/profile-view.jsx",
+                    lineNumber: 84
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement(Card.Img, {
+                className: "movie-card",
+                variant: "top",
+                src: movie.ImagePath,
+                __source: {
+                    fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/profile-view/profile-view.jsx",
+                    lineNumber: 85
+                },
+                __self: this
+            })), /*#__PURE__*/ _reactDefault.default.createElement(Card.Title, {
+                className: "movie-card-title",
+                __source: {
+                    fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/profile-view/profile-view.jsx",
+                    lineNumber: 87
+                },
+                __self: this
+            }, movie.Name), /*#__PURE__*/ _reactDefault.default.createElement(Card.Body, {
+                className: "movie-card-body",
+                __source: {
+                    fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/profile-view/profile-view.jsx",
+                    lineNumber: 88
+                },
+                __self: this
+            }, /*#__PURE__*/ _reactDefault.default.createElement(Button, {
+                size: "sm",
+                className: "profile-button remove-favorite",
+                variant: "danger",
+                onClick: (e)=>this.handleRemoveFavorite(e, movie._id)
+                ,
+                __source: {
+                    fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/profile-view/profile-view.jsx",
+                    lineNumber: 89
+                },
+                __self: this
+            }, "Remove")))));
+        })))))));
+    }
+}
+ProfileView.propTypes = {
+    user: propTypes.shape({
+        FavoriteMovies: propTypes.arrayOf(propTypes.shape({
+            _id: propTypes.string.isRequired
+        })),
+        Username: propTypes.string.isRequired,
+        Email: propTypes.string.isRequired,
+        Birthday: propTypes.instanceOf(Date)
+    })
+};
+
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

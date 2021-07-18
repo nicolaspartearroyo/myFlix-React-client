@@ -1,0 +1,29 @@
+.card-body {
+  padding: 0%;
+}
+
+.image-container {
+  position: relative;
+  transition: transform 0.2s;
+  border-style: none;
+}
+
+.image-container:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.image-container:hover .overlay {
+  opacity: 1;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  transition: 0.5s ease;
+  opacity: 0;
+  bottom: 0;
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+}

@@ -1,0 +1,139 @@
+var helpers = require("../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _reactBootstrap = require("react-bootstrap");
+exports.default = NavBar;
+return(/*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Navbar, {
+    bg: "dark",
+    collapseOnSelect: true,
+    fixed: "top",
+    expand: "lg",
+    variant: "dark",
+    __source: {
+        fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/navbar-view/navbar-view.jsx",
+        lineNumber: 6
+    },
+    __self: undefined
+}, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Navbar.Brand, {
+    href: "#",
+    __source: {
+        fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/navbar-view/navbar-view.jsx",
+        lineNumber: 7
+    },
+    __self: undefined
+}, "myFlix"), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Navbar.Toggle, {
+    "aria-controls": "basic-navbar-nav",
+    __source: {
+        fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/navbar-view/navbar-view.jsx",
+        lineNumber: 8
+    },
+    __self: undefined
+}), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Navbar.Collapse, {
+    id: "basic-navbar-nav",
+    __source: {
+        fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/navbar-view/navbar-view.jsx",
+        lineNumber: 9
+    },
+    __self: undefined
+}, /*#__PURE__*/ _reactDefault.default.createElement(Nav, {
+    className: "mr-auto",
+    __source: {
+        fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/navbar-view/navbar-view.jsx",
+        lineNumber: 10
+    },
+    __self: undefined
+}, /*#__PURE__*/ _reactDefault.default.createElement(Nav.Link, {
+    href: "#",
+    __source: {
+        fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/navbar-view/navbar-view.jsx",
+        lineNumber: 11
+    },
+    __self: undefined
+}, "Movies"), /*#__PURE__*/ _reactDefault.default.createElement(Nav.Link, {
+    href: "#",
+    __source: {
+        fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/navbar-view/navbar-view.jsx",
+        lineNumber: 12
+    },
+    __self: undefined
+}, "Directors"), /*#__PURE__*/ _reactDefault.default.createElement(Nav.Link, {
+    href: "#",
+    __source: {
+        fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/navbar-view/navbar-view.jsx",
+        lineNumber: 13
+    },
+    __self: undefined
+}, "Genres"), /*#__PURE__*/ _reactDefault.default.createElement(NavDropdown, {
+    title: "Profile",
+    id: "basic-nav-dropdown",
+    __source: {
+        fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/navbar-view/navbar-view.jsx",
+        lineNumber: 14
+    },
+    __self: undefined
+}, /*#__PURE__*/ _reactDefault.default.createElement(NavDropdown.Item, {
+    href: "#",
+    __source: {
+        fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/navbar-view/navbar-view.jsx",
+        lineNumber: 15
+    },
+    __self: undefined
+}, "User"), /*#__PURE__*/ _reactDefault.default.createElement(NavDropdown.Item, {
+    href: "#",
+    __source: {
+        fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/navbar-view/navbar-view.jsx",
+        lineNumber: 16
+    },
+    __self: undefined
+}, "Settings"), /*#__PURE__*/ _reactDefault.default.createElement(NavDropdown.Item, {
+    href: "#",
+    __source: {
+        fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/navbar-view/navbar-view.jsx",
+        lineNumber: 17
+    },
+    __self: undefined
+}, "Favorite Movies"), /*#__PURE__*/ _reactDefault.default.createElement("button", {
+    onClick: ()=>{
+        undefined.onLoggedOut();
+    },
+    __source: {
+        fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/navbar-view/navbar-view.jsx",
+        lineNumber: 18
+    },
+    __self: undefined
+}, "Logout"))), /*#__PURE__*/ _reactDefault.default.createElement(Form, {
+    inline: true,
+    __source: {
+        fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/navbar-view/navbar-view.jsx",
+        lineNumber: 21
+    },
+    __self: undefined
+}, /*#__PURE__*/ _reactDefault.default.createElement(FormControl, {
+    type: "text",
+    placeholder: "Search",
+    __source: {
+        fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/navbar-view/navbar-view.jsx",
+        lineNumber: 22
+    },
+    __self: undefined
+}), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Button, {
+    variant: "dark",
+    __source: {
+        fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/navbar-view/navbar-view.jsx",
+        lineNumber: 23
+    },
+    __self: undefined
+}, "Search")))));
+
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

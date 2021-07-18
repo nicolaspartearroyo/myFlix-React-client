@@ -1,0 +1,5 @@
+.movieCard {
+  width: 20%;
+  border-top-left-radius: calc(.25rem - 1px);
+  border-top-right-radius: calc(.25rem - 1px);
+}

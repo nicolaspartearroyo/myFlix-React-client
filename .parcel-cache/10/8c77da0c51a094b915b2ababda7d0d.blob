@@ -1,0 +1,285 @@
+var helpers = require("../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "MainView", ()=>MainView
+);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _axios = require("axios");
+var _axiosDefault = parcelHelpers.interopDefault(_axios);
+var _loginView = require("../login-view/login-view");
+var _registrationView = require("../registration-view/registration-view");
+var _movieView = require("../movie-view/movie-view");
+var _movieCard = require("../movie-card/movie-card");
+var _directorView = require("../director-view/director-view");
+var _genreView = require("../genre-view/genre-view");
+var _navbarView = require("../navbar-view/navbar-view");
+var _col = require("react-bootstrap/Col");
+var _colDefault = parcelHelpers.interopDefault(_col);
+var _row = require("react-bootstrap/Row");
+var _rowDefault = parcelHelpers.interopDefault(_row);
+var _button = require("react-bootstrap/Button");
+var _buttonDefault = parcelHelpers.interopDefault(_button);
+var _container = require("react-bootstrap/Container");
+var _containerDefault = parcelHelpers.interopDefault(_container);
+var _reactRouterDom = require("react-router-dom");
+var _mainViewScss = require("./main-view.scss");
+class MainView extends _reactDefault.default.Component {
+    constructor(){
+        super();
+        this.state = {
+            movies: [],
+            user: null
+        };
+    }
+    componentDidMount() {
+        let accessToken = localStorage.getItem('token');
+        if (accessToken !== null) {
+            this.setState({
+                user: localStorage.getItem('user')
+            });
+            this.getMovies(accessToken);
+        }
+    }
+    // getUsers(token) {
+    //   axios.get('https://myflixbypartearroyo.herokuapp.com//users', {
+    //     headers: { Authorization: `Bearer ${token}` }
+    //   })
+    //     .then(response => {
+    //       // Assign the result to the state
+    //       this.setState({
+    //         users: response.data
+    //       });
+    //       console.log(response)
+    //     })
+    //     .catch(function (error) {
+    //       console.log(error);
+    //     });
+    // }
+    onLoggedIn(authData) {
+        console.log(authData);
+        this.setState({
+            user: authData.user.Username
+        });
+        localStorage.setItem('token', authData.token);
+        localStorage.setItem('user', authData.user.Username);
+        this.getMovies(authData.token);
+    }
+    onLoggedOut() {
+        localStorage.removeItem('token');
+        localStorage.removeItem('user');
+        this.setState({
+            user: null
+        });
+    }
+    getMovies(token) {
+        _axiosDefault.default.get('https://myflixbypartearroyo.herokuapp.com/movies', {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        }).then((response)=>{
+            // Assign the result to the state
+            this.setState({
+                movies: response.data
+            });
+        }).catch(function(error) {
+            console.log(error);
+        });
+    }
+    onRegister(register) {
+        this.setState({
+            register: register
+        });
+    }
+    render() {
+        const { movies , user  } = this.state;
+        return(/*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.BrowserRouter, {
+            __source: {
+                fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/main-view/main-view.jsx",
+                lineNumber: 101
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "d-flex flex-grow-1",
+            __source: {
+                fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/main-view/main-view.jsx",
+                lineNumber: 103
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
+            exact: true,
+            path: "/",
+            render: ()=>{
+                if (user.token === '') return(/*#__PURE__*/ _reactDefault.default.createElement(_containerDefault.default, {
+                    fluid: true,
+                    className: "p-0"
+                }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
+                    className: "login-view d-flex min-vh-100 justify-content-center align-items-center m-0"
+                }, /*#__PURE__*/ _reactDefault.default.createElement(_loginView.LoginView, {
+                    onLoggedIn: (user1)=>{
+                        onLoggedin(user1);
+                    }
+                }))));
+                return(/*#__PURE__*/ _reactDefault.default.createElement(_containerDefault.default, {
+                    fluid: true,
+                    className: "d-flex flex-column"
+                }, /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, null, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
+                    className: "p-0"
+                }, /*#__PURE__*/ _reactDefault.default.createElement(_navbarView.NavBar, null))), /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
+                    className: "d-flex flex-md-grow-1"
+                }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
+                    className: "col-3 p-0"
+                }, /*#__PURE__*/ _reactDefault.default.createElement(SideBar, null)), /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
+                    className: "m-0 col-9 d-flex flex-column p-4"
+                }, /*#__PURE__*/ _reactDefault.default.createElement(MovieList, {
+                    movies: movies
+                })))));
+            },
+            __source: {
+                fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/main-view/main-view.jsx",
+                lineNumber: 105
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
+            path: "/register",
+            render: ()=>{
+                // If user is logged in already redirect to login view 
+                if (user.token !== '') return(/*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Redirect, {
+                    to: "/"
+                }));
+                return(/*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
+                    className: "reg-view min-vh-100 d-flex justify-content-center align-items-center m-0"
+                }, /*#__PURE__*/ _reactDefault.default.createElement(_registrationView.RegistrationView, null)));
+            },
+            __source: {
+                fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/main-view/main-view.jsx",
+                lineNumber: 138
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
+            path: "/movie/:movieId",
+            render: ({ match , history  })=>{
+                if (user.token === '') return(/*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Redirect, {
+                    to: "/"
+                }));
+                return(/*#__PURE__*/ _reactDefault.default.createElement(_containerDefault.default, {
+                    fluid: true,
+                    className: "d-flex flex-column"
+                }, /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, null, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
+                    className: "p-0"
+                }, /*#__PURE__*/ _reactDefault.default.createElement(_navbarView.NavBar, null))), /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
+                    className: "d-flex flex-md-grow-1"
+                }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
+                    className: "col-3 p-0"
+                }, /*#__PURE__*/ _reactDefault.default.createElement(SideBar, null)), /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
+                    className: "col-9 p-0"
+                }, /*#__PURE__*/ _reactDefault.default.createElement(_movieView.MovieView, {
+                    className: "h-100",
+                    movie: movies.find((m)=>m._id === match.params.movieId
+                    ),
+                    onBackClick: ()=>history.goBack()
+                })))));
+            },
+            __source: {
+                fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/main-view/main-view.jsx",
+                lineNumber: 151
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
+            path: "/director/:directorId",
+            render: ({ match , history  })=>{
+                if (user.token === '') return(/*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Redirect, {
+                    to: "/"
+                }));
+                return(/*#__PURE__*/ _reactDefault.default.createElement(_containerDefault.default, {
+                    fluid: true,
+                    className: "d-flex flex-column"
+                }, /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, null, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
+                    className: "p-0"
+                }, /*#__PURE__*/ _reactDefault.default.createElement(_navbarView.NavBar, null))), /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
+                    className: "d-flex flex-md-grow-1"
+                }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
+                    className: "col-3 p-0"
+                }, /*#__PURE__*/ _reactDefault.default.createElement(SideBar, null)), /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
+                    className: "col-9"
+                }, /*#__PURE__*/ _reactDefault.default.createElement(_directorView.DirectorView, {
+                    director: movies.find((m)=>m.director.name === match.params.directorId
+                    ).director,
+                    onBackClick: ()=>history.goBack()
+                })))));
+            },
+            __source: {
+                fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/main-view/main-view.jsx",
+                lineNumber: 182
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
+            path: "/genre/:genreId",
+            render: ({ match , history  })=>{
+                if (user.token === '') return(/*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Redirect, {
+                    to: "/"
+                }));
+                return(/*#__PURE__*/ _reactDefault.default.createElement(_containerDefault.default, {
+                    fluid: true,
+                    className: "d-flex flex-column"
+                }, /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, null, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
+                    className: "p-0"
+                }, /*#__PURE__*/ _reactDefault.default.createElement(_navbarView.NavBar, null))), /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
+                    className: "d-flex flex-md-grow-1"
+                }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
+                    className: "col-3 p-0"
+                }, /*#__PURE__*/ _reactDefault.default.createElement(SideBar, null)), /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
+                    className: "col-9"
+                }, /*#__PURE__*/ _reactDefault.default.createElement(_genreView.GenreView, {
+                    movies: movies.filter((m)=>m.genre.name === match.params.genreId
+                    ),
+                    onBackClick: ()=>history.goBack()
+                })))));
+            },
+            __source: {
+                fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/main-view/main-view.jsx",
+                lineNumber: 212
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
+            path: "/profile",
+            render: ({ history  })=>{
+                if (user.token === '') return(/*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Redirect, {
+                    to: "/"
+                }));
+                return(/*#__PURE__*/ _reactDefault.default.createElement(_containerDefault.default, {
+                    fluid: true,
+                    className: "d-flex flex-column"
+                }, /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, null, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
+                    className: "p-0"
+                }, /*#__PURE__*/ _reactDefault.default.createElement(_navbarView.NavBar, null))), /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
+                    className: "d-flex flex-md-grow-1"
+                }, /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
+                    className: "col-3 p-0"
+                }, /*#__PURE__*/ _reactDefault.default.createElement(SideBar, null)), /*#__PURE__*/ _reactDefault.default.createElement(_colDefault.default, {
+                    className: "p-0"
+                }, /*#__PURE__*/ _reactDefault.default.createElement(ProfileView, {
+                    token: localStorage.getItem('token'),
+                    onBackClick: ()=>history.goBack()
+                })))));
+            },
+            __source: {
+                fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/main-view/main-view.jsx",
+                lineNumber: 242
+            },
+            __self: this
+        }))));
+    }
+}
+exports.default = MainView;
+
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
