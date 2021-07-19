@@ -4,7 +4,8 @@
   "description": "myFlix_client",
   "main": "src/index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html --dist-dir ./dist"
   },
   "author": "Nicolas Partearroyo",
   "license": "ISC",
