@@ -1,9 +1,3 @@
-body {
-  background: #141414;
-  color: #ffffff;
-  padding-top: 40px;
-}
-
 .image-container {
   position: relative;
   transition: transform 0.2s;
@@ -29,16 +23,7 @@ body {
   padding: 20px;
   text-align: center;
 }
-.login {
-  padding: 30px;
-  border: 0.3px solid grey;
-  box-shadow: 5px 5px 5px grey;
-  border-radius: 15px;
-}
 
-.app-container {
-  padding: 30px;
-}
 .register {
   padding: 30px;
   border: 0.3px solid grey;
@@ -49,29 +34,10 @@ body {
 div {
   width: 100%;
 }
-.app-container {
-  background: #141414;
-  color: #ffffff;
-  padding-top: 40px;
+.button-space {
+  padding: 5px 5px 5px 0px;
 }
 
-.col-md-3 {
-  padding: 5px;
-}
-.profile-view {
-  padding: 30px;
-  border: 0.3px solid grey;
-  box-shadow: 5px 5px 5px grey;
-  border-radius: 15px;
-}
-
-.app-container {
-  padding: 30px;
-}
-
-.favorites-movies {
-  display: inline-block;
-}
 .my-flix {
   color: steelblue;
 }
