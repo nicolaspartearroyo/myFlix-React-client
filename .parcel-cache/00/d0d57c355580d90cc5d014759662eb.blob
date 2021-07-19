@@ -1,0 +1,7 @@
+body {
+  padding-top: 40px;
+}
+
+.card-body {
+  padding: 20px;
+}

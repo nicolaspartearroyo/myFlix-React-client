@@ -1,0 +1,52 @@
+var helpers = require("../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+var _reactBootstrap = require("react-bootstrap");
+var _reactBootstrapDefault = parcelHelpers.interopDefault(_reactBootstrap);
+const GenreView = ({ movie , onBackClick  })=>{
+    return(/*#__PURE__*/ _reactDefault.default.createElement(_reactDefault.default.Fragment, null, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrapDefault.default, {
+        onClick: onBackClick,
+        __source: {
+            fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/genre-view/genre-view.jsx",
+            lineNumber: 8
+        },
+        __self: undefined
+    }, " Back "), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        __source: {
+            fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/genre-view/genre-view.jsx",
+            lineNumber: 9
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("pre", {
+        __source: {
+            fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/genre-view/genre-view.jsx",
+            lineNumber: 10
+        },
+        __self: undefined
+    }, movie.genre.Name), /*#__PURE__*/ _reactDefault.default.createElement("pre", {
+        __source: {
+            fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/genre-view/genre-view.jsx",
+            lineNumber: 11
+        },
+        __self: undefined
+    }, movie.genre.Description))));
+};
+_c = GenreView;
+exports.default = GenreView;
+var _c;
+$RefreshReg$(_c, "GenreView");
+
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

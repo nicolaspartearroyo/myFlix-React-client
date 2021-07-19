@@ -1,0 +1,197 @@
+var helpers = require("../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "MovieView", ()=>MovieView
+);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _button = require("react-bootstrap/Button");
+var _buttonDefault = parcelHelpers.interopDefault(_button);
+var _badge = require("react-bootstrap/Badge");
+var _badgeDefault = parcelHelpers.interopDefault(_badge);
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+var _reactRouterDom = require("react-router-dom");
+var _axios = require("axios");
+var _axiosDefault = parcelHelpers.interopDefault(_axios);
+var _movieViewScss = require("./movie-view.scss");
+class MovieView extends _reactDefault.default.Component {
+    keypressCallback(event) {
+        console.log(event.key);
+    }
+    componentDidMount() {
+        document.addEventListener('keypress', this.keypressCallback);
+    }
+    componentWillUnmount() {
+        document.removeEventListener('keypress', this.keypressCallback);
+    }
+    addFavorite() {
+        const token = localStorage.getItem('token');
+        const username = localStorage.getItem('user');
+        _axiosDefault.default.post(`https:myflixbypartearroyo.herokuapp.com/users/${username}/movies/${this.props.movie._id}`, {
+        }, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        }).then((response)=>{
+            alert(`Added to Favorites List`);
+        }).catch(function(error) {
+            console.log(error);
+        });
+    }
+    render() {
+        const { movie , onBackClick  } = this.props;
+        return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "movie-view",
+            __source: {
+                fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/movie-view/movie-view.jsx",
+                lineNumber: 42
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "movie-poster",
+            __source: {
+                fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/movie-view/movie-view.jsx",
+                lineNumber: 43
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("img", {
+            src: movie.ImageURL,
+            __source: {
+                fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/movie-view/movie-view.jsx",
+                lineNumber: 44
+            },
+            __self: this
+        })), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "movie-title",
+            __source: {
+                fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/movie-view/movie-view.jsx",
+                lineNumber: 46
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h1", {
+            bg: "primary",
+            __source: {
+                fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/movie-view/movie-view.jsx",
+                lineNumber: 47
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
+            className: "value",
+            __source: {
+                fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/movie-view/movie-view.jsx",
+                lineNumber: 48
+            },
+            __self: this
+        }, movie.Title))), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "movie-description",
+            __source: {
+                fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/movie-view/movie-view.jsx",
+                lineNumber: 51
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
+            className: "value",
+            __source: {
+                fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/movie-view/movie-view.jsx",
+                lineNumber: 52
+            },
+            __self: this
+        }, movie.Description)), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "movie-genre button-space",
+            __source: {
+                fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/movie-view/movie-view.jsx",
+                lineNumber: 54
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
+            to: `/genres/${movie.Genre.Name}`,
+            __source: {
+                fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/movie-view/movie-view.jsx",
+                lineNumber: 55
+            },
+            __self: this
+        }, "Genre: "), /*#__PURE__*/ _reactDefault.default.createElement("span", {
+            className: "value",
+            __source: {
+                fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/movie-view/movie-view.jsx",
+                lineNumber: 56
+            },
+            __self: this
+        }, movie.Genre.Name)), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "movie-director button-space",
+            __source: {
+                fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/movie-view/movie-view.jsx",
+                lineNumber: 58
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
+            to: `/directors/${movie.Director.Name}`,
+            __source: {
+                fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/movie-view/movie-view.jsx",
+                lineNumber: 59
+            },
+            __self: this
+        }, "Director: "), "/Link>", /*#__PURE__*/ _reactDefault.default.createElement("span", {
+            className: "value",
+            __source: {
+                fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/movie-view/movie-view.jsx",
+                lineNumber: 60
+            },
+            __self: this
+        }, movie.Director.Name)), /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
+            variant: "success",
+            className: "fav-button",
+            value: movie._id,
+            onClick: (e)=>this.addFavorite(e, movie)
+            ,
+            __source: {
+                fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/movie-view/movie-view.jsx",
+                lineNumber: 62
+            },
+            __self: this
+        }, "Add to Favorites"), /*#__PURE__*/ _reactDefault.default.createElement("div", {
+            className: "button-space",
+            __source: {
+                fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/movie-view/movie-view.jsx",
+                lineNumber: 65
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
+            variant: "primary",
+            onClick: ()=>{
+                onBackClick(null);
+            },
+            __source: {
+                fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/movie-view/movie-view.jsx",
+                lineNumber: 66
+            },
+            __self: this
+        }, "Back")));
+    }
+}
+MovieView.propTypes = {
+    movie: _propTypesDefault.default.shape({
+        Title: _propTypesDefault.default.string.isRequired,
+        Description: _propTypesDefault.default.string.isRequired,
+        ImageURL: _propTypesDefault.default.string.isRequired,
+        Featured: _propTypesDefault.default.bool,
+        Genre: _propTypesDefault.default.shape({
+            Name: _propTypesDefault.default.string.isRequired
+        }),
+        Director: _propTypesDefault.default.shape({
+            Name: _propTypesDefault.default.string.isRequired
+        })
+    }).isRequired
+};
+
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

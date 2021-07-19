@@ -1,0 +1,112 @@
+var helpers = require("../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "NavBar", ()=>NavBar
+);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _reactRouterDom = require("react-router-dom");
+var _reactBootstrap = require("react-bootstrap");
+class NavBar extends _reactDefault.default.Component {
+    constructor(){
+        super();
+        this.state = {
+        };
+    }
+    onLoggedOut = ()=>{
+        localStorage.clear();
+        window.open('/', '_self');
+    };
+    render() {
+        const { user  } = this.props;
+        const movies = `/`;
+        const profile = `/users/${user}`;
+        if (!user) return null;
+        return(/*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Navbar, {
+            bg: "dark",
+            collapseOnSelect: true,
+            fixed: "top",
+            expand: "lg",
+            variant: "dark",
+            __source: {
+                fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/navbar-view/navbar-view.jsx",
+                lineNumber: 26
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Navbar.Toggle, {
+            "aria-controls": "basic-navbar-nav",
+            __source: {
+                fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/navbar-view/navbar-view.jsx",
+                lineNumber: 27
+            },
+            __self: this
+        }), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Navbar.Collapse, {
+            id: "responsive-navbar-nav",
+            __source: {
+                fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/navbar-view/navbar-view.jsx",
+                lineNumber: 29
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Nav, {
+            className: "ml-auto",
+            __source: {
+                fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/navbar-view/navbar-view.jsx",
+                lineNumber: 30
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Nav.Link, {
+            as: _reactRouterDom.Link,
+            to: movies,
+            className: "link-text",
+            __source: {
+                fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/navbar-view/navbar-view.jsx",
+                lineNumber: 32
+            },
+            __self: this
+        }, "Movies"), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Nav.Link, {
+            as: _reactRouterDom.Link,
+            to: profile,
+            className: "link-text",
+            __source: {
+                fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/navbar-view/navbar-view.jsx",
+                lineNumber: 36
+            },
+            __self: this
+        }, "Profile"), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Nav.Link, {
+            to: '/',
+            onClick: this.onLoggedOut,
+            __source: {
+                fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/navbar-view/navbar-view.jsx",
+                lineNumber: 40
+            },
+            __self: this
+        }, "Log Out")), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Form, {
+            inline: true,
+            __source: {
+                fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/navbar-view/navbar-view.jsx",
+                lineNumber: 45
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.FormControl, {
+            type: "text",
+            placeholder: "Search",
+            __source: {
+                fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/navbar-view/navbar-view.jsx",
+                lineNumber: 46
+            },
+            __self: this
+        })))));
+    }
+}
+exports.default = NavBar;
+
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

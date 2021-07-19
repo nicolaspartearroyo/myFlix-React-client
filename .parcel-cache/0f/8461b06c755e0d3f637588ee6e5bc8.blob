@@ -1,0 +1,175 @@
+var helpers = require("../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "MovieCard", ()=>MovieCard
+);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+var _reactBootstrap = require("react-bootstrap");
+var _reactRouterDom = require("react-router-dom");
+var _movieCardScss = require("./movie-card.scss");
+var _s = $RefreshSig$();
+const MAX_POSSIBLE_HEIGHT = 500;
+const styles = {
+    container: {
+        width: 300,
+        margin: "0 auto"
+    },
+    card: {
+        backgroundColor: "#B7E0F2",
+        borderRadius: 55,
+        padding: "3rem"
+    }
+};
+const ExpendableText = ({ maxHeight , children  })=>{
+    _s();
+    const ref = _react.useRef();
+    const [shouldShowExpand, setShouldShowExpand] = _react.useState(false);
+    const [expanded, setExpanded] = _react.useState(true);
+    _react.useEffect(()=>{
+        if (ref.current.scrollHeight > maxHeight) {
+            setShouldShowExpand(true);
+            setExpanded(false);
+        }
+    }, [
+        maxHeight
+    ]);
+    return(/*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Card.Text, {
+        as: "h4",
+        style: styles.cardText,
+        ref: ref,
+        __source: {
+            fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/movie-card/movie-card.jsx",
+            lineNumber: 33
+        },
+        __self: undefined
+    }, /*#__PURE__*/ _reactDefault.default.createElement("div", {
+        class: "inner",
+        style: {
+            maxHeight: expanded ? MAX_POSSIBLE_HEIGHT : maxHeight
+        },
+        __source: {
+            fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/movie-card/movie-card.jsx",
+            lineNumber: 34
+        },
+        __self: undefined
+    }, children), shouldShowExpand && /*#__PURE__*/ _reactDefault.default.createElement("button", {
+        onClick: ()=>setExpanded(!expanded)
+        ,
+        __source: {
+            fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/movie-card/movie-card.jsx",
+            lineNumber: 41
+        },
+        __self: undefined
+    }, "Expand")));
+};
+_s(ExpendableText, "NUrCT5BpKGk6OHSHwry5s2FX+7E=");
+_c = ExpendableText;
+class MovieCard extends _reactDefault.default.Component {
+    render() {
+        const { movie  } = this.props;
+        return(/*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Container, {
+            fluid: true,
+            __source: {
+                fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/movie-card/movie-card.jsx",
+                lineNumber: 52
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Card, {
+            style: {
+                border: 0
+            },
+            bg: "secondary",
+            text: "white",
+            __source: {
+                fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/movie-card/movie-card.jsx",
+                lineNumber: 54
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
+            to: `/movies/${movie._id}`,
+            __source: {
+                fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/movie-card/movie-card.jsx",
+                lineNumber: 55
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Card.Img, {
+            className: "image-container",
+            variant: "top",
+            src: movie.ImageURL,
+            __source: {
+                fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/movie-card/movie-card.jsx",
+                lineNumber: 56
+            },
+            __self: this
+        })), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Card.Body, {
+            __source: {
+                fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/movie-card/movie-card.jsx",
+                lineNumber: 58
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Card.Title, {
+            __source: {
+                fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/movie-card/movie-card.jsx",
+                lineNumber: 59
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement("h4", {
+            __source: {
+                fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/movie-card/movie-card.jsx",
+                lineNumber: 59
+            },
+            __self: this
+        }, movie.Title)), /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Card.Text, {
+            __source: {
+                fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/movie-card/movie-card.jsx",
+                lineNumber: 60
+            },
+            __self: this
+        }, " ", /*#__PURE__*/ _reactDefault.default.createElement(ExpendableText, {
+            maxHeight: 95,
+            __source: {
+                fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/movie-card/movie-card.jsx",
+                lineNumber: 60
+            },
+            __self: this
+        }, movie.Description)), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
+            to: `/movies/${movie._id}`,
+            __source: {
+                fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/movie-card/movie-card.jsx",
+                lineNumber: 63
+            },
+            __self: this
+        }, /*#__PURE__*/ _reactDefault.default.createElement(_reactBootstrap.Button, {
+            variant: "dark",
+            __source: {
+                fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/movie-card/movie-card.jsx",
+                lineNumber: 64
+            },
+            __self: this
+        }, "Open"))))));
+    }
+}
+MovieCard.propTypes = {
+    movie: _propTypesDefault.default.shape({
+        Title: _propTypesDefault.default.string.isRequired,
+        Description: _propTypesDefault.default.string.isRequired,
+        ImageURL: _propTypesDefault.default.string.isRequired,
+        Featured: _propTypesDefault.default.bool.isRequired
+    }).isRequired
+};
+var _c;
+$RefreshReg$(_c, "ExpendableText");
+
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}

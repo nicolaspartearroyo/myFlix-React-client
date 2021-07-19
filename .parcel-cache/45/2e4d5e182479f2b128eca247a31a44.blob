@@ -1,0 +1,17 @@
+html {
+  background: #141414;
+}
+
+body {
+  background: #141414;
+}
+
+.app-container {
+  background: #141414;
+  color: #ffffff;
+  padding-top: 40px;
+}
+
+.col-md-3 {
+  padding: 5px;
+}

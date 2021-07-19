@@ -1,0 +1,10 @@
+.login {
+  padding: 30px;
+  border: 0.3px solid grey;
+  box-shadow: 10px 5px 5px black;
+  border-radius: 15px;
+}
+
+.app-container {
+  padding: 30px;
+}

@@ -1,0 +1,15 @@
+html {
+  background: #141414;
+}
+
+.app-container {
+  background: #141414;
+  color: #ffffff;
+  padding-top: 40px;
+  overflow-x: auto;
+  flex-wrap: nowrap;
+}
+
+.col-md-3 {
+  padding: 5px;
+}

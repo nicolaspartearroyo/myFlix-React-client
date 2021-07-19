@@ -1,0 +1,8 @@
+.my-flix {
+  color: steelblue;
+}
+
+.app-container {
+  overflow-x: auto;
+  flex-wrap: nowrap;
+}

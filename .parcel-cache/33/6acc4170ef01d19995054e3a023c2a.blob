@@ -1,0 +1,6 @@
+.login {
+  padding: 30px;
+  border: 1px solid;
+  border-radius: 15px;
+  background-color: #fff;
+}

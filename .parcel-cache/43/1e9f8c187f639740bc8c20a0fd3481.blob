@@ -1,0 +1,18 @@
+
+.login {
+  padding: 30px;
+  border: 0.3px solid grey;
+  box-shadow: 5px 5px 5px grey;
+  border-radius: 15px;
+}
+
+.app-container {
+  padding: 30px;
+}
+.app-container {
+  padding-yop: 50px;
+}
+.my-flix {
+  color: steelblue;
+}
+/*# sourceMappingURL=index.HASH_REF_c3e04533bb0130a60c53f240b8e8e4ec.css.map */
