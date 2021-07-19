@@ -151,11 +151,11 @@ window.$RefreshSig$ = function() {
     };
 };
 
-},{"react-refresh/runtime":"3Hh8h"}],"3Hh8h":[function(require,module,exports) {
+},{"react-refresh/runtime":"592mh"}],"592mh":[function(require,module,exports) {
 'use strict';
 module.exports = require('./cjs/react-refresh-runtime.development.js');
 
-},{"./cjs/react-refresh-runtime.development.js":"7EKxN"}],"7EKxN":[function(require,module,exports) {
+},{"./cjs/react-refresh-runtime.development.js":"2rNh6"}],"2rNh6":[function(require,module,exports) {
 /** @license React v0.9.0
  * react-refresh-runtime.development.js
  *
@@ -859,7 +859,7 @@ function hmrAcceptRun(bundle/*: ParcelRequire */ , id/*: string */ ) {
 }
 
 },{}],"1zrjV":[function(require,module,exports) {
-var helpers = require("../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var helpers = require("../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
 helpers.prelude(module);
@@ -917,7 +917,7 @@ _reactDomDefault.default.render(/*#__PURE__*/ _reactDefault.default.createElemen
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"3b2NM","react-dom":"2sg1U","./components/main-view/main-view":"65fUn","./index.scss":"5zsSU","@parcel/transformer-js/src/esmodule-helpers.js":"7IoRK","../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"3QRYi","react-bootstrap/Container":"3Mt3t","redux":"7panR","react-redux":"7GDa4","./reducers/reducers":"2736c","redux-devtools-extension":"3vUkb"}],"3b2NM":[function(require,module,exports) {
+},{"react":"3b2NM","react-dom":"2sg1U","./components/main-view/main-view":"65fUn","./index.scss":"5zsSU","@parcel/transformer-js/src/esmodule-helpers.js":"367CR","react-bootstrap/Container":"3Mt3t","redux":"7panR","react-redux":"7GDa4","./reducers/reducers":"2736c","redux-devtools-extension":"3vUkb","../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f"}],"3b2NM":[function(require,module,exports) {
 'use strict';
 module.exports = require('./cjs/react.development.js');
 
@@ -21867,7 +21867,7 @@ module.exports = require('./cjs/scheduler-tracing.development.js');
 })();
 
 },{}],"65fUn":[function(require,module,exports) {
-var helpers = require("../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
 helpers.prelude(module);
@@ -22257,7 +22257,7 @@ exports.default = _reactRedux.connect(mapStateToProps, {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"3b2NM","@parcel/transformer-js/src/esmodule-helpers.js":"7IoRK","../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"3QRYi","axios":"7rA65","react-router-dom":"1PMSK","react-redux":"7GDa4","../../actions/actions":"5S6cN","../movies-list/movies-list":"3QW3Y","react-bootstrap":"4n7hB","../login-view/login-view":"6ZzB0","../registration-view/registration-view":"62Lx3","../movie-view/movie-view":"2Ia6h","../director-view/director-view":"3LIJC","../genre-view/genre-view":"73nK3","../profile-view/profile-view":"3Pa0I","../navbar-view/navbar-view":"77Qab"}],"7IoRK":[function(require,module,exports) {
+},{"react":"3b2NM","@parcel/transformer-js/src/esmodule-helpers.js":"367CR","axios":"7rA65","react-router-dom":"1PMSK","react-redux":"7GDa4","../../actions/actions":"5S6cN","../movies-list/movies-list":"3QW3Y","react-bootstrap":"4n7hB","../login-view/login-view":"6ZzB0","../registration-view/registration-view":"62Lx3","../movie-view/movie-view":"2Ia6h","../director-view/director-view":"3LIJC","../genre-view/genre-view":"73nK3","../profile-view/profile-view":"3Pa0I","../navbar-view/navbar-view":"77Qab","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f"}],"367CR":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -22289,127 +22289,7 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}],"3QRYi":[function(require,module,exports) {
-"use strict";
-var Refresh = require('react-refresh/runtime');
-function debounce(func, delay) {
-    var args;
-    var timeout = undefined;
-    return function(args1) {
-        clearTimeout(timeout);
-        timeout = setTimeout(function() {
-            timeout = undefined;
-            func.call(null, args1);
-        }, delay);
-    };
-}
-var enqueueUpdate = debounce(function() {
-    Refresh.performReactRefresh();
-}, 30); // Everthing below is either adapted or copied from
-// https://github.com/facebook/metro/blob/61de16bd1edd7e738dd0311c89555a644023ab2d/packages/metro/src/lib/polyfills/require.js
-// MIT License - Copyright (c) Facebook, Inc. and its affiliates.
-module.exports.prelude = function(module) {
-    window.$RefreshReg$ = function(type, id) {
-        Refresh.register(type, module.id + ' ' + id);
-    };
-    window.$RefreshSig$ = Refresh.createSignatureFunctionForTransform;
-};
-module.exports.postlude = function(module) {
-    if (isReactRefreshBoundary(module.exports)) {
-        registerExportsForReactRefresh(module);
-        if (module.hot) {
-            module.hot.dispose(function(data) {
-                if (Refresh.hasUnrecoverableErrors()) window.location.reload();
-                data.prevExports = module.exports;
-            });
-            module.hot.accept(function(getParents) {
-                var prevExports = module.hot.data.prevExports;
-                var nextExports = module.exports; // Since we just executed the code for it, it's possible
-                // that the new exports make it ineligible for being a boundary.
-                var isNoLongerABoundary = !isReactRefreshBoundary(nextExports); // It can also become ineligible if its exports are incompatible
-                // with the previous exports.
-                // For example, if you add/remove/change exports, we'll want
-                // to re-execute the importing modules, and force those components
-                // to re-render. Similarly, if you convert a class component
-                // to a function, we want to invalidate the boundary.
-                var didInvalidate = shouldInvalidateReactRefreshBoundary(prevExports, nextExports);
-                if (isNoLongerABoundary || didInvalidate) {
-                    // We'll be conservative. The only case in which we won't do a full
-                    // reload is if all parent modules are also refresh boundaries.
-                    // In that case we'll add them to the current queue.
-                    var parents = getParents();
-                    if (parents.length === 0) {
-                        // Looks like we bubbled to the root. Can't recover from that.
-                        window.location.reload();
-                        return;
-                    }
-                    return parents;
-                }
-                enqueueUpdate();
-            });
-        }
-    }
-};
-function isReactRefreshBoundary(exports) {
-    if (Refresh.isLikelyComponentType(exports)) return true;
-    if (exports == null || typeof exports !== 'object') // Exit if we can't iterate over exports.
-    return false;
-    var hasExports = false;
-    var areAllExportsComponents = true;
-    let isESM = '__esModule' in exports;
-    for(var key in exports){
-        hasExports = true;
-        if (key === '__esModule') continue;
-        var desc = Object.getOwnPropertyDescriptor(exports, key);
-        if (desc && desc.get && !isESM) // Don't invoke getters for CJS as they may have side effects.
-        return false;
-        var exportValue = exports[key];
-        if (!Refresh.isLikelyComponentType(exportValue)) areAllExportsComponents = false;
-    }
-    return hasExports && areAllExportsComponents;
-}
-function shouldInvalidateReactRefreshBoundary(prevExports, nextExports) {
-    var prevSignature = getRefreshBoundarySignature(prevExports);
-    var nextSignature = getRefreshBoundarySignature(nextExports);
-    if (prevSignature.length !== nextSignature.length) return true;
-    for(var i = 0; i < nextSignature.length; i++){
-        if (prevSignature[i] !== nextSignature[i]) return true;
-    }
-    return false;
-} // When this signature changes, it's unsafe to stop at this refresh boundary.
-function getRefreshBoundarySignature(exports) {
-    var signature = [];
-    signature.push(Refresh.getFamilyByType(exports));
-    if (exports == null || typeof exports !== 'object') // Exit if we can't iterate over exports.
-    // (This is important for legacy environments.)
-    return signature;
-    let isESM = '__esModule' in exports;
-    for(var key in exports){
-        if (key === '__esModule') continue;
-        var desc = Object.getOwnPropertyDescriptor(exports, key);
-        if (desc && desc.get && !isESM) continue;
-        var exportValue = exports[key];
-        signature.push(key);
-        signature.push(Refresh.getFamilyByType(exportValue));
-    }
-    return signature;
-}
-function registerExportsForReactRefresh(module) {
-    var exports = module.exports, id = module.id;
-    Refresh.register(exports, id + ' %exports%');
-    if (exports == null || typeof exports !== 'object') // Exit if we can't iterate over exports.
-    // (This is important for legacy environments.)
-    return;
-    let isESM = '__esModule' in exports;
-    for(var key in exports){
-        var desc = Object.getOwnPropertyDescriptor(exports, key);
-        if (desc && desc.get && !isESM) continue;
-        var exportValue = exports[key];
-        Refresh.register(exportValue, id + ' %exports% ' + key);
-    }
-}
-
-},{"react-refresh/runtime":"3Hh8h"}],"7rA65":[function(require,module,exports) {
+},{}],"7rA65":[function(require,module,exports) {
 module.exports = require('./lib/axios');
 
 },{"./lib/axios":"4qfhW"}],"4qfhW":[function(require,module,exports) {
@@ -23059,7 +22939,7 @@ utils.forEach([
 });
 module.exports = defaults;
 
-},{"process":"1h06Z","./utils":"7J9rV","./helpers/normalizeHeaderName":"5yMqL","./adapters/xhr":"6pJqL","./adapters/http":"6pJqL"}],"1h06Z":[function(require,module,exports) {
+},{"process":"7AgFc","./utils":"7J9rV","./helpers/normalizeHeaderName":"5yMqL","./adapters/xhr":"6pJqL","./adapters/http":"6pJqL"}],"7AgFc":[function(require,module,exports) {
 // shim for using process in browser
 var process = module.exports = {
 };
@@ -28233,8 +28113,8 @@ function updateUser(value) {
     };
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"7IoRK"}],"3QW3Y":[function(require,module,exports) {
-var helpers = require("../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"367CR"}],"3QW3Y":[function(require,module,exports) {
+var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
 helpers.prelude(module);
@@ -28314,7 +28194,7 @@ $RefreshReg$(_c, "MoviesList");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"3b2NM","react-bootstrap/Col":"2D0r8","react-redux":"7GDa4","../movie-card/movie-card":"iiGD0","@parcel/transformer-js/src/esmodule-helpers.js":"7IoRK","../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"3QRYi","../visibility-filter-input/visibility-filter-input":"ZDnYj"}],"2D0r8":[function(require,module,exports) {
+},{"react":"3b2NM","react-bootstrap/Col":"2D0r8","react-redux":"7GDa4","../movie-card/movie-card":"iiGD0","@parcel/transformer-js/src/esmodule-helpers.js":"367CR","../visibility-filter-input/visibility-filter-input":"ZDnYj","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f"}],"2D0r8":[function(require,module,exports) {
 "use strict";
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 exports.__esModule = true;
@@ -28485,7 +28365,7 @@ var _default = ThemeProvider;
 exports.default = _default;
 
 },{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","react":"3b2NM"}],"iiGD0":[function(require,module,exports) {
-var helpers = require("../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
 helpers.prelude(module);
@@ -28582,7 +28462,7 @@ class MovieCard extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"3b2NM","axios":"7rA65","react-bootstrap":"4n7hB","react-router-dom":"1PMSK","./movie-card.scss":"5Mgzv","@parcel/transformer-js/src/esmodule-helpers.js":"7IoRK","../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"3QRYi"}],"4n7hB":[function(require,module,exports) {
+},{"react":"3b2NM","axios":"7rA65","react-bootstrap":"4n7hB","react-router-dom":"1PMSK","./movie-card.scss":"5Mgzv","@parcel/transformer-js/src/esmodule-helpers.js":"367CR","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f"}],"4n7hB":[function(require,module,exports) {
 "use strict";
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 exports.__esModule = true;
@@ -40562,8 +40442,128 @@ var _default = Tooltip;
 exports.default = _default;
 module.exports = exports["default"];
 
-},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","react":"3b2NM","prop-types-extra/lib/isRequiredForA11y":"4XrEc","./ThemeProvider":"4rz1S"}],"5Mgzv":[function() {},{}],"ZDnYj":[function(require,module,exports) {
-var helpers = require("../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+},{"@babel/runtime/helpers/interopRequireDefault":"4ttVj","@babel/runtime/helpers/extends":"3krLJ","@babel/runtime/helpers/objectWithoutPropertiesLoose":"3Yx9V","classnames":"5aJRc","react":"3b2NM","prop-types-extra/lib/isRequiredForA11y":"4XrEc","./ThemeProvider":"4rz1S"}],"5Mgzv":[function() {},{}],"4Jj4f":[function(require,module,exports) {
+"use strict";
+var Refresh = require('react-refresh/runtime');
+function debounce(func, delay) {
+    var args;
+    var timeout = undefined;
+    return function(args1) {
+        clearTimeout(timeout);
+        timeout = setTimeout(function() {
+            timeout = undefined;
+            func.call(null, args1);
+        }, delay);
+    };
+}
+var enqueueUpdate = debounce(function() {
+    Refresh.performReactRefresh();
+}, 30); // Everthing below is either adapted or copied from
+// https://github.com/facebook/metro/blob/61de16bd1edd7e738dd0311c89555a644023ab2d/packages/metro/src/lib/polyfills/require.js
+// MIT License - Copyright (c) Facebook, Inc. and its affiliates.
+module.exports.prelude = function(module) {
+    window.$RefreshReg$ = function(type, id) {
+        Refresh.register(type, module.id + ' ' + id);
+    };
+    window.$RefreshSig$ = Refresh.createSignatureFunctionForTransform;
+};
+module.exports.postlude = function(module) {
+    if (isReactRefreshBoundary(module.exports)) {
+        registerExportsForReactRefresh(module);
+        if (module.hot) {
+            module.hot.dispose(function(data) {
+                if (Refresh.hasUnrecoverableErrors()) window.location.reload();
+                data.prevExports = module.exports;
+            });
+            module.hot.accept(function(getParents) {
+                var prevExports = module.hot.data.prevExports;
+                var nextExports = module.exports; // Since we just executed the code for it, it's possible
+                // that the new exports make it ineligible for being a boundary.
+                var isNoLongerABoundary = !isReactRefreshBoundary(nextExports); // It can also become ineligible if its exports are incompatible
+                // with the previous exports.
+                // For example, if you add/remove/change exports, we'll want
+                // to re-execute the importing modules, and force those components
+                // to re-render. Similarly, if you convert a class component
+                // to a function, we want to invalidate the boundary.
+                var didInvalidate = shouldInvalidateReactRefreshBoundary(prevExports, nextExports);
+                if (isNoLongerABoundary || didInvalidate) {
+                    // We'll be conservative. The only case in which we won't do a full
+                    // reload is if all parent modules are also refresh boundaries.
+                    // In that case we'll add them to the current queue.
+                    var parents = getParents();
+                    if (parents.length === 0) {
+                        // Looks like we bubbled to the root. Can't recover from that.
+                        window.location.reload();
+                        return;
+                    }
+                    return parents;
+                }
+                enqueueUpdate();
+            });
+        }
+    }
+};
+function isReactRefreshBoundary(exports) {
+    if (Refresh.isLikelyComponentType(exports)) return true;
+    if (exports == null || typeof exports !== 'object') // Exit if we can't iterate over exports.
+    return false;
+    var hasExports = false;
+    var areAllExportsComponents = true;
+    let isESM = '__esModule' in exports;
+    for(var key in exports){
+        hasExports = true;
+        if (key === '__esModule') continue;
+        var desc = Object.getOwnPropertyDescriptor(exports, key);
+        if (desc && desc.get && !isESM) // Don't invoke getters for CJS as they may have side effects.
+        return false;
+        var exportValue = exports[key];
+        if (!Refresh.isLikelyComponentType(exportValue)) areAllExportsComponents = false;
+    }
+    return hasExports && areAllExportsComponents;
+}
+function shouldInvalidateReactRefreshBoundary(prevExports, nextExports) {
+    var prevSignature = getRefreshBoundarySignature(prevExports);
+    var nextSignature = getRefreshBoundarySignature(nextExports);
+    if (prevSignature.length !== nextSignature.length) return true;
+    for(var i = 0; i < nextSignature.length; i++){
+        if (prevSignature[i] !== nextSignature[i]) return true;
+    }
+    return false;
+} // When this signature changes, it's unsafe to stop at this refresh boundary.
+function getRefreshBoundarySignature(exports) {
+    var signature = [];
+    signature.push(Refresh.getFamilyByType(exports));
+    if (exports == null || typeof exports !== 'object') // Exit if we can't iterate over exports.
+    // (This is important for legacy environments.)
+    return signature;
+    let isESM = '__esModule' in exports;
+    for(var key in exports){
+        if (key === '__esModule') continue;
+        var desc = Object.getOwnPropertyDescriptor(exports, key);
+        if (desc && desc.get && !isESM) continue;
+        var exportValue = exports[key];
+        signature.push(key);
+        signature.push(Refresh.getFamilyByType(exportValue));
+    }
+    return signature;
+}
+function registerExportsForReactRefresh(module) {
+    var exports = module.exports, id = module.id;
+    Refresh.register(exports, id + ' %exports%');
+    if (exports == null || typeof exports !== 'object') // Exit if we can't iterate over exports.
+    // (This is important for legacy environments.)
+    return;
+    let isESM = '__esModule' in exports;
+    for(var key in exports){
+        var desc = Object.getOwnPropertyDescriptor(exports, key);
+        if (desc && desc.get && !isESM) continue;
+        var exportValue = exports[key];
+        Refresh.register(exportValue, id + ' %exports% ' + key);
+    }
+}
+
+},{"react-refresh/runtime":"592mh"}],"ZDnYj":[function(require,module,exports) {
+var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
 helpers.prelude(module);
@@ -40602,8 +40602,8 @@ $RefreshReg$(_c, "VisibilityFilterInput");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"3b2NM","react-redux":"7GDa4","react-bootstrap/Form":"6A5ko","../../actions/actions":"5S6cN","@parcel/transformer-js/src/esmodule-helpers.js":"7IoRK","../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"3QRYi"}],"6ZzB0":[function(require,module,exports) {
-var helpers = require("../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+},{"react":"3b2NM","react-redux":"7GDa4","react-bootstrap/Form":"6A5ko","../../actions/actions":"5S6cN","@parcel/transformer-js/src/esmodule-helpers.js":"367CR","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f"}],"6ZzB0":[function(require,module,exports) {
+var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
 helpers.prelude(module);
@@ -40761,8 +40761,8 @@ $RefreshReg$(_c, "LoginView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"3b2NM","axios":"7rA65","react-bootstrap/Button":"1ru0l","react-router-dom":"1PMSK","./login-view.scss":"6Z2OM","@parcel/transformer-js/src/esmodule-helpers.js":"7IoRK","../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"3QRYi","react-bootstrap/Form":"6A5ko","react-redux":"7GDa4"}],"6Z2OM":[function() {},{}],"62Lx3":[function(require,module,exports) {
-var helpers = require("../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+},{"react":"3b2NM","axios":"7rA65","react-bootstrap/Button":"1ru0l","react-router-dom":"1PMSK","./login-view.scss":"6Z2OM","@parcel/transformer-js/src/esmodule-helpers.js":"367CR","react-bootstrap/Form":"6A5ko","react-redux":"7GDa4","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f"}],"6Z2OM":[function() {},{}],"62Lx3":[function(require,module,exports) {
+var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
 helpers.prelude(module);
@@ -40774,15 +40774,13 @@ parcelHelpers.export(exports, "RegistrationView", ()=>RegistrationView
 );
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
-var _propTypes = require("prop-types");
-var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
 var _button = require("react-bootstrap/Button");
 var _buttonDefault = parcelHelpers.interopDefault(_button);
 var _form = require("react-bootstrap/Form");
 var _formDefault = parcelHelpers.interopDefault(_form);
-var _row = require("react-bootstrap/row");
+var _row = require("react-bootstrap/Row");
 var _rowDefault = parcelHelpers.interopDefault(_row);
 var _reactRouterDom = require("react-router-dom");
 var _registrationViewScss = require("./registration-view.scss");
@@ -40864,26 +40862,26 @@ function RegistrationView(props) {
         className: "register justify-content-md-center",
         __source: {
             fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 85
+            lineNumber: 84
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
         __source: {
             fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 86
+            lineNumber: 85
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
         controlId: "formName",
         __source: {
             fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 87
+            lineNumber: 86
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Label, {
         __source: {
             fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 88
+            lineNumber: 87
         },
         __self: this
     }, "Name:"), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
@@ -40893,7 +40891,7 @@ function RegistrationView(props) {
         ,
         __source: {
             fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 89
+            lineNumber: 88
         },
         __self: this
     }), Object.keys(nameError).map((key)=>{
@@ -40901,27 +40899,27 @@ function RegistrationView(props) {
             key: key,
             __source: {
                 fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/registration-view/registration-view.jsx",
-                lineNumber: 92
+                lineNumber: 91
             },
             __self: this
         }, nameError[key]));
     }))), /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
         __source: {
             fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 100
+            lineNumber: 99
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
         controlId: "formUsername",
         __source: {
             fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 102
+            lineNumber: 101
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Label, {
         __source: {
             fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 103
+            lineNumber: 102
         },
         __self: this
     }, "Username:"), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
@@ -40931,7 +40929,7 @@ function RegistrationView(props) {
         ,
         __source: {
             fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 104
+            lineNumber: 103
         },
         __self: this
     }), Object.keys(usernameError).map((key)=>{
@@ -40939,27 +40937,27 @@ function RegistrationView(props) {
             key: key,
             __source: {
                 fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/registration-view/registration-view.jsx",
-                lineNumber: 107
+                lineNumber: 106
             },
             __self: this
         }, usernameError[key]));
     }))), /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
         __source: {
             fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 114
+            lineNumber: 113
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
         controlId: "formPassword",
         __source: {
             fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 115
+            lineNumber: 114
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Label, {
         __source: {
             fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 116
+            lineNumber: 115
         },
         __self: this
     }, "Create Password:"), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
@@ -40969,7 +40967,7 @@ function RegistrationView(props) {
         ,
         __source: {
             fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 117
+            lineNumber: 116
         },
         __self: this
     }), Object.keys(passwordError).map((key)=>{
@@ -40977,27 +40975,27 @@ function RegistrationView(props) {
             key: key,
             __source: {
                 fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/registration-view/registration-view.jsx",
-                lineNumber: 120
+                lineNumber: 119
             },
             __self: this
         }, passwordError[key]));
     }))), /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
         __source: {
             fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 128
+            lineNumber: 127
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
         controlId: "formEmail",
         __source: {
             fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 129
+            lineNumber: 128
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Label, {
         __source: {
             fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 130
+            lineNumber: 129
         },
         __self: this
     }, "Email:"), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
@@ -41007,7 +41005,7 @@ function RegistrationView(props) {
         ,
         __source: {
             fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 131
+            lineNumber: 130
         },
         __self: this
     }), Object.keys(emailError).map((key)=>{
@@ -41015,27 +41013,27 @@ function RegistrationView(props) {
             key: key,
             __source: {
                 fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/registration-view/registration-view.jsx",
-                lineNumber: 134
+                lineNumber: 133
             },
             __self: this
         }, emailError[key]));
     }))), /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
         __source: {
             fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 142
+            lineNumber: 141
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Group, {
         controlId: "formBirthdate",
         __source: {
             fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 143
+            lineNumber: 142
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Label, {
         __source: {
             fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 144
+            lineNumber: 143
         },
         __self: this
     }, "Birthdate:"), /*#__PURE__*/ _reactDefault.default.createElement(_formDefault.default.Control, {
@@ -41045,7 +41043,7 @@ function RegistrationView(props) {
         ,
         __source: {
             fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 145
+            lineNumber: 144
         },
         __self: this
     }), Object.keys(birthdateError).map((key)=>{
@@ -41053,20 +41051,20 @@ function RegistrationView(props) {
             key: key,
             __source: {
                 fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/registration-view/registration-view.jsx",
-                lineNumber: 148
+                lineNumber: 147
             },
             __self: this
         }, birthdateError[key]));
     }))), /*#__PURE__*/ _reactDefault.default.createElement(_rowDefault.default, {
         __source: {
             fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 156
+            lineNumber: 155
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
         __source: {
             fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 157
+            lineNumber: 156
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
@@ -41074,14 +41072,14 @@ function RegistrationView(props) {
         onClick: handleSubmit,
         __source: {
             fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 158
+            lineNumber: 157
         },
         __self: this
     }, "Submit"), ' ', /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Link, {
         to: "/",
         __source: {
             fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 160
+            lineNumber: 159
         },
         __self: this
     }, /*#__PURE__*/ _reactDefault.default.createElement(_buttonDefault.default, {
@@ -41089,22 +41087,13 @@ function RegistrationView(props) {
         type: "button",
         __source: {
             fileName: "/Users/Neik/careerfoundry/movie_client/myFlix_client/src/components/registration-view/registration-view.jsx",
-            lineNumber: 161
+            lineNumber: 160
         },
         __self: this
     }, "Back"))))));
 }
 _s(RegistrationView, "3u8vJonMzxrUEgL446HJCSLSbSI=");
 _c = RegistrationView;
-RegistrationView.propTypes = {
-    register: _propTypesDefault.default.shape({
-        Name: _propTypesDefault.default.string.isRequired,
-        Username: _propTypesDefault.default.string.isRequired,
-        Password: _propTypesDefault.default.string.isRequired,
-        Email: _propTypesDefault.default.string.isRequired,
-        Birthdate: _propTypesDefault.default.string.isRequired
-    })
-};
 var _c;
 $RefreshReg$(_c, "RegistrationView");
 
@@ -41113,8 +41102,8 @@ $RefreshReg$(_c, "RegistrationView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"3b2NM","prop-types":"4dfy5","axios":"7rA65","react-bootstrap/Button":"1ru0l","react-bootstrap/Form":"6A5ko","react-bootstrap/row":"3fzwD","react-router-dom":"1PMSK","./registration-view.scss":"49nq6","@parcel/transformer-js/src/esmodule-helpers.js":"7IoRK","../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"3QRYi"}],"49nq6":[function() {},{}],"2Ia6h":[function(require,module,exports) {
-var helpers = require("../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+},{"react":"3b2NM","axios":"7rA65","react-bootstrap/Button":"1ru0l","react-bootstrap/Form":"6A5ko","react-router-dom":"1PMSK","./registration-view.scss":"49nq6","@parcel/transformer-js/src/esmodule-helpers.js":"367CR","react-bootstrap/Row":"3fzwD","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f"}],"49nq6":[function() {},{}],"2Ia6h":[function(require,module,exports) {
+var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
 helpers.prelude(module);
@@ -41293,8 +41282,8 @@ class MovieView extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"3b2NM","react-bootstrap/Button":"1ru0l","react-router-dom":"1PMSK","axios":"7rA65","./movie-view.scss":"7Wmdb","@parcel/transformer-js/src/esmodule-helpers.js":"7IoRK","../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"3QRYi"}],"7Wmdb":[function() {},{}],"3LIJC":[function(require,module,exports) {
-var helpers = require("../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+},{"react":"3b2NM","react-bootstrap/Button":"1ru0l","react-router-dom":"1PMSK","axios":"7rA65","./movie-view.scss":"7Wmdb","@parcel/transformer-js/src/esmodule-helpers.js":"367CR","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f"}],"7Wmdb":[function() {},{}],"3LIJC":[function(require,module,exports) {
+var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
 helpers.prelude(module);
@@ -41393,8 +41382,8 @@ class DirectorView extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"3b2NM","react-bootstrap/Button":"1ru0l","@parcel/transformer-js/src/esmodule-helpers.js":"7IoRK","../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"3QRYi","./director-view.scss":"7no17"}],"7no17":[function() {},{}],"73nK3":[function(require,module,exports) {
-var helpers = require("../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+},{"react":"3b2NM","react-bootstrap/Button":"1ru0l","@parcel/transformer-js/src/esmodule-helpers.js":"367CR","./director-view.scss":"7no17","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f"}],"7no17":[function() {},{}],"73nK3":[function(require,module,exports) {
+var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
 helpers.prelude(module);
@@ -41478,8 +41467,8 @@ class GenreView extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"3b2NM","react-bootstrap":"4n7hB","@parcel/transformer-js/src/esmodule-helpers.js":"7IoRK","../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"3QRYi"}],"3Pa0I":[function(require,module,exports) {
-var helpers = require("../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+},{"react":"3b2NM","react-bootstrap":"4n7hB","@parcel/transformer-js/src/esmodule-helpers.js":"367CR","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f"}],"3Pa0I":[function(require,module,exports) {
+var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
 helpers.prelude(module);
@@ -41900,8 +41889,8 @@ exports.default = _reactRedux.connect(mapStateToProps, {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"3b2NM","axios":"7rA65","react-bootstrap":"4n7hB","./profile-view.scss":"3NpNh","@parcel/transformer-js/src/esmodule-helpers.js":"7IoRK","../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"3QRYi","react-redux":"7GDa4","../../actions/actions":"5S6cN"}],"3NpNh":[function() {},{}],"77Qab":[function(require,module,exports) {
-var helpers = require("../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+},{"react":"3b2NM","axios":"7rA65","react-bootstrap":"4n7hB","./profile-view.scss":"3NpNh","@parcel/transformer-js/src/esmodule-helpers.js":"367CR","react-redux":"7GDa4","../../actions/actions":"5S6cN","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f"}],"3NpNh":[function() {},{}],"77Qab":[function(require,module,exports) {
+var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
 helpers.prelude(module);
@@ -41998,7 +41987,7 @@ exports.default = NavBar;
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"3b2NM","react-router-dom":"1PMSK","react-bootstrap":"4n7hB","@parcel/transformer-js/src/esmodule-helpers.js":"7IoRK","../../../../../../.nvm/versions/node/v14.16.1/lib/node_modules/parcel/node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"3QRYi"}],"5zsSU":[function() {},{}],"7panR":[function(require,module,exports) {
+},{"react":"3b2NM","react-router-dom":"1PMSK","react-bootstrap":"4n7hB","@parcel/transformer-js/src/esmodule-helpers.js":"367CR","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f"}],"5zsSU":[function() {},{}],"7panR":[function(require,module,exports) {
 'use strict';
 Object.defineProperty(exports, '__esModule', {
     value: true
@@ -42585,7 +42574,7 @@ const moviesApp = _redux.combineReducers({
 });
 exports.default = moviesApp;
 
-},{"redux":"7panR","../actions/actions":"5S6cN","@parcel/transformer-js/src/esmodule-helpers.js":"7IoRK"}],"3vUkb":[function(require,module,exports) {
+},{"redux":"7panR","../actions/actions":"5S6cN","@parcel/transformer-js/src/esmodule-helpers.js":"367CR"}],"3vUkb":[function(require,module,exports) {
 'use strict';
 var compose = require('redux').compose;
 exports.__esModule = true;
