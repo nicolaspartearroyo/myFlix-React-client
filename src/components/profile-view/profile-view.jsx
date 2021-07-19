@@ -2,6 +2,10 @@ import React from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 import { Button, Card, CardDeck, Form, Row } from 'react-bootstrap';
+import { connect } from 'react-redux';
+
+import { setUser, updateUser } from '../../actions/actions';
+
 import './profile-view.scss';
 
 export class ProfileView extends React.Component {
@@ -64,7 +68,6 @@ export class ProfileView extends React.Component {
       .catch(function (error) {
         console.log(error);
       })
-    // .then(() => window.location.reload());
   }
 
   handleUpdate(e, newName, newUsername, newPassword, newEmail, newBirthdate) {
@@ -158,18 +161,18 @@ export class ProfileView extends React.Component {
 
     return (
       <Row className="profile-view">
-        <Card style={{ background: '#141414' }} className="profile-card ">
-          <h2 style={{ padding: '20px' }}>Your Favorites Movies</h2>
+        <Card className="profile-card border-0">
+          <h1>Your Favorites Movies</h1>
           {FavoriteMovies.length === 0 && <div className="text-center">Empty.</div>}
 
-          <div className="favorites-movies ">
+          <div className="favorites-movies">
             {FavoriteMovies.length > 0 &&
               movies.map((movie) => {
                 if (movie._id === FavoriteMovies.find((favMovie) => favMovie === movie._id)) {
                   return (
                     <CardDeck key={movie._id} className="movie-card-deck">
-                      <Card className="favorites-item card-content" style={{ background: '#141414', width: '16rem' }} key={movie._id}>
-                        <Card.Img style={{ width: '18rem' }} className="movieCard" variant="top" src={movie.ImageURL} />
+                      <Card className="favorites-item card-content border-0" style={{ width: '16rem' }} key={movie._id}>
+                        <Card.Img style={{ width: '18rem', 'padding-top': '10px' }} className="movieCard" variant="top" src={movie.ImageURL} />
                         <Card.Title className="movie-card-title">{movie.Title}</Card.Title>
                         <Button size='sm' className='profile-button remove-favorite' variant='danger' value={movie._id} onClick={() => this.removeFavouriteMovie(movie)}>
                           Remove
@@ -240,3 +243,12 @@ ProfileView.propTypes = {
     Birthdate: PropTypes.string,
   }),
 };
+
+let mapStateToProps = state => {
+  return {
+    user: state.user,
+    movies: state.movies
+  }
+}
+
+export default connect(mapStateToProps, { setUser, updateUser })(ProfileView);

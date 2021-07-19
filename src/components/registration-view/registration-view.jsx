@@ -97,18 +97,20 @@ export function RegistrationView(props) {
         </Form.Group>
       </Row>
 
-      <Form.Group controlId="formUsername">
-        <Form.Label>Username:</Form.Label>
-        <Form.Control type="text" value={username} onChange={e => setUsername(e.target.value)} />
-        {Object.keys(usernameError).map((key) => {
-          return (
-            <div key={key}>
-              {usernameError[key]}
-            </div>
-          );
-        })}
-      </Form.Group>
+      <Row>
 
+        <Form.Group controlId="formUsername">
+          <Form.Label>Username:</Form.Label>
+          <Form.Control type="text" value={username} onChange={e => setUsername(e.target.value)} />
+          {Object.keys(usernameError).map((key) => {
+            return (
+              <div key={key}>
+                {usernameError[key]}
+              </div>
+            );
+          })}
+        </Form.Group>
+      </Row>
       <Row>
         <Form.Group controlId="formPassword">
           <Form.Label>Create Password:</Form.Label>
@@ -137,25 +139,30 @@ export function RegistrationView(props) {
         </Form.Group>
       </Row>
 
-      <Form.Group controlId="formBirthdate">
-        <Form.Label>Birthdate:</Form.Label>
-        <Form.Control type="date" value={birthdate} onChange={e => setBirthdate(e.target.value)} />
-        {Object.keys(birthdateError).map((key) => {
-          return (
-            <div key={key}>
-              {birthdateError[key]}
-            </div>
-          );
-        })}
-      </Form.Group>
+      <Row>
+        <Form.Group controlId="formBirthdate">
+          <Form.Label>Birthdate:</Form.Label>
+          <Form.Control type="date" value={birthdate} onChange={e => setBirthdate(e.target.value)} />
+          {Object.keys(birthdateError).map((key) => {
+            return (
+              <div key={key}>
+                {birthdateError[key]}
+              </div>
+            );
+          })}
+        </Form.Group>
+      </Row>
 
-      <span>
-        <Button type="submit" onClick={handleSubmit}>Submit</Button>
-        {' '}
-        <Link to="/">
-          <Button variant="secondary" type="button">Back</Button>
-        </Link>
-      </span>
+      <Row>
+        <span>
+          <Button type="submit" onClick={handleSubmit}>Submit</Button>
+          {' '}
+          <Link to="/">
+            <Button variant="secondary" type="button">Back</Button>
+          </Link>
+        </span>
+      </Row>
+
     </Form >
   );
 }

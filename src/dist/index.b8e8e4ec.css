@@ -1,5 +1,4 @@
 .image-container {
-  position: relative;
   transition: transform 0.2s;
   border-style: none;
 }
@@ -19,11 +18,26 @@
   transition: 0.5s ease;
   opacity: 0;
   bottom: 0;
-  font-size: 20px;
+  font-size: 10px;
   padding: 20px;
   text-align: center;
 }
 
+.fav-btn {
+  padding-left: 35px;
+}
+.login {
+  margin: auto;
+  width: 70%;
+  padding: 30px;
+  border: 0.3px solid grey;
+  box-shadow: 5px 5px 5px grey;
+  border-radius: 15px;
+}
+
+.app-container {
+  padding: 5px;
+}
 .register {
   padding: 30px;
   border: 0.3px solid grey;
@@ -37,7 +51,16 @@ div {
 .button-space {
   padding: 5px 5px 5px 0px;
 }
+body {
+  padding-top: 60px;
+}
+.profile-button {
+  width: 20%;
+}
 
+.favorites-items {
+  border-style: none;
+}
 .my-flix {
   color: steelblue;
 }

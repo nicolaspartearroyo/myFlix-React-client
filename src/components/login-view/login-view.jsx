@@ -2,9 +2,12 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 
+import { connect } from 'react-redux';
+
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { Link } from "react-router-dom";
+
 import './login-view.scss';
 
 export function LoginView(props) {
@@ -28,14 +31,14 @@ export function LoginView(props) {
   };
 
   return (
-    <div className="login">
-      <Form>
-        <Form.Group controlId="formUsername">
+    <div>
+      <Form className="login justify-content-center">
+        <Form.Group className="mb-3" controlId="formBasicUsername">
           <Form.Label>Username:</Form.Label>
           <Form.Control type="text" value={username} onChange={e => setUsername(e.target.value)} />
         </Form.Group>
 
-        <Form.Group controlId="formPassword">
+        <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>Password:</Form.Label>
           <Form.Control type="password" value={password} onChange={e => setPassword(e.target.value)} />
           <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
@@ -53,7 +56,6 @@ export function LoginView(props) {
   );
 }
 
-
 LoginView.propTypes = {
   user: PropTypes.shape({
     username: PropTypes.string.isRequired,
@@ -61,3 +63,9 @@ LoginView.propTypes = {
   }),
   onLoggedIn: PropTypes.func.isRequired
 };
+
+const mapDispatchToProps = (dispatch) => ({
+  handleSubmit: (username, password) => dispatch(handleSubmit(username, password))
+});
+
+export default connect(null, mapDispatchToProps)(LoginView);
