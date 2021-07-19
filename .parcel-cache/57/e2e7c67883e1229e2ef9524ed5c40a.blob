@@ -1,0 +1,23 @@
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+exports.__esModule = true;
+exports.default = void 0;
+var _getComputedStyle = _interopRequireDefault(require("./getComputedStyle"));
+var _hyphenateStyle = _interopRequireDefault(require("./hyphenateStyle"));
+var _isTransform = _interopRequireDefault(require("./isTransform"));
+function style(node, property) {
+    var css = '';
+    var transforms = '';
+    if (typeof property === 'string') return node.style.getPropertyValue(_hyphenateStyle.default(property)) || _getComputedStyle.default(node).getPropertyValue(_hyphenateStyle.default(property));
+    Object.keys(property).forEach(function(key) {
+        var value = property[key];
+        if (!value && value !== 0) node.style.removeProperty(_hyphenateStyle.default(key));
+        else if (_isTransform.default(key)) transforms += key + "(" + value + ") ";
+        else css += _hyphenateStyle.default(key) + ": " + value + ";";
+    });
+    if (transforms) css += "transform: " + transforms + ";";
+    node.style.cssText += ";" + css;
+}
+var _default = style;
+exports.default = _default;
+module.exports = exports["default"];
