@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
 
@@ -55,14 +54,6 @@ export function LoginView(props) {
     </div>
   );
 }
-
-LoginView.propTypes = {
-  user: PropTypes.shape({
-    username: PropTypes.string.isRequired,
-    password: PropTypes.string.isRequired,
-  }),
-  onLoggedIn: PropTypes.func.isRequired
-};
 
 const mapDispatchToProps = (dispatch) => ({
   handleSubmit: (username, password) => dispatch(handleSubmit(username, password))

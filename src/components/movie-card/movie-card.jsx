@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import axios from 'axios';
 import { Container, Card, Button, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
@@ -51,12 +50,3 @@ export class MovieCard extends React.Component {
     );
   }
 }
-
-MovieCard.propTypes = {
-  movie: PropTypes.shape({
-    Title: PropTypes.string.isRequired,
-    Description: PropTypes.string.isRequired,
-    ImageURL: PropTypes.string.isRequired,
-    Featured: PropTypes.bool.isRequired,
-  }).isRequired,
-};

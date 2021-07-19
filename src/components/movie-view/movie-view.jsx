@@ -1,7 +1,5 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
-import Badge from 'react-bootstrap/Badge';
-import propTypes from 'prop-types';
 import { Link } from "react-router-dom";
 import axios from 'axios';
 import './movie-view.scss';
@@ -68,22 +66,4 @@ export class MovieView extends React.Component {
     );
   }
 }
-
-
-MovieView.propTypes = {
-  movie: propTypes.shape({
-    Title: propTypes.string.isRequired,
-    Description: propTypes.string.isRequired,
-    ImageURL: propTypes.string.isRequired,
-    Featured: propTypes.bool,
-    Genre: propTypes.shape({
-      Name: propTypes.string.isRequired
-    }),
-    Director: propTypes.shape({
-      Name: propTypes.string.isRequired
-    }),
-  }).isRequired
-};
-
-
 
